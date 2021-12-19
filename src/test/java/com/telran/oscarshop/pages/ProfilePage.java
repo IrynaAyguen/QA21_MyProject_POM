@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Collection;
+import java.util.List;
 
 public class ProfilePage extends PageBase {
 
@@ -29,7 +30,7 @@ public class ProfilePage extends PageBase {
     @FindBy(id = "id_q")
     WebElement searchFieldInput;
 
-    @FindBy(xpath="//input[@type='submit']")
+    @FindBy(xpath = "//input[@type='submit']")
     WebElement searchBtn;
 
     public ProfilePage typeInSearchFieldInput(String productName) {
@@ -40,15 +41,92 @@ public class ProfilePage extends PageBase {
 
     public String takeNameOfProduct() {
         pause(2000);
-        String nameOfProduct = driver.findElement(By.xpath("//h3 //a[@href='/en-gb/catalogue/the-clean-coder_150/']")).getText();
+        WebElement nameOfProduct = driver.findElement(By.xpath("//h3 //a[@href='/en-gb/catalogue/the-clean-coder_150/']"));
+        String nameOfProductText = nameOfProduct.getText();
+        System.out.println("founded product is:  " + nameOfProductText);
+        return nameOfProductText;
+
+        //String nameOfProduct = driver.findElement(By.xpath("//h3 //a[@href='/en-gb/catalogue/the-clean-coder_150/']")).getText();
         //String nameOfProduct = driver.findElement(By.xpath("//article[@class='product_pod'] //h3 //a[@href='/en-gb/catalogue/the-clean-coder_150/']")).getText();
-        System.out.println(nameOfProduct);
-        return nameOfProduct;
+        //return nameOfProduct;
+
     }
 
-    public String verifyEmptyField() {
-        String text=driver.findElement(By.xpath("//div[@class='page-header action']//h1")).getText();
+    public String verifySearchField() {
+        String text = driver.findElement(By.xpath("//div[@class='page-header action']//h1")).getText();
+        //System.out.println(text);
+        return text;
+    }
+
+    public String verifyNullResults() {
+        String text = driver.findElement(By.xpath("//form[@class='form-horizontal']")).getText();
+        //System.out.println(text);
+        return text;
+    }
+
+    public String verifyNumberOfResults() {
+        String text = driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[1]")).getText();
         System.out.println(text);
         return text;
     }
+
+    //@FindBy(css = "section div .row")
+    @FindBy(css = ".col-xs-6.col-sm-4.col-md-3.col-lg-3")
+    List<WebElement> productsList;
+
+    public Boolean isNumberOfProductsOnPageEqualsListSizeOnPage() {
+        int nList = productsList.size();
+        int nPage;
+        int number1 = Integer.parseInt(driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[1]")).getText());
+        if (number1 > 20) {
+            int number3 = Integer.parseInt(driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[3]")).getText());
+            int number2 = Integer.parseInt(driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[2]")).getText());
+            nPage = number3 - number2 + 1;
+        }else{
+            nPage= number1;
+        }
+        return (nPage == nList);
+//        if (nPage == nList) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+    }
+
+
+    @FindBy(css = ".btn.btn-primary.btn-block")
+    WebElement addToBasketBtn;
+//    @FindBy (css=".price_color")
+//    WebElement productPrice;
+    @FindBy (xpath = "//div[@class='alertinner '] / p / strong[1]")
+    WebElement newBasketTotal;
+
+    public ProfilePage clickAddToBasketButton() {
+        click(addToBasketBtn);
+        return this;
+    }
+
+    public boolean isNewBasketTotalCorrect() {
+        String pP =driver.findElement(By.cssSelector(".product_price .price_color")).getText();
+
+        double pPrice= Double.parseDouble(pP.substring(1));
+        System.out.println("*************pP= "+pPrice);
+        double nBasketTotal= Double.parseDouble((newBasketTotal.getText()).substring(1));
+
+        return (pPrice==nBasketTotal);
+    }
+
+
+    @FindBy(xpath = "//span[@class='btn-group']")
+    WebElement viewBasketBtn;
+
+    public BasketPage clickViewBasketButton() {
+        click(viewBasketBtn);
+        return new BasketPage(driver);
+    }
+
+
+
+
+
 }
