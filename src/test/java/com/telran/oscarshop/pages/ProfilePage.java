@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.Collection;
 import java.util.List;
@@ -82,8 +83,8 @@ public class ProfilePage extends PageBase {
             int number3 = Integer.parseInt(driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[3]")).getText());
             int number2 = Integer.parseInt(driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[2]")).getText());
             nPage = number3 - number2 + 1;
-        }else{
-            nPage= number1;
+        } else {
+            nPage = number1;
         }
         return (nPage == nList);
 //        if (nPage == nList) {
@@ -96,9 +97,8 @@ public class ProfilePage extends PageBase {
 
     @FindBy(css = ".btn.btn-primary.btn-block")
     WebElement addToBasketBtn;
-//    @FindBy (css=".price_color")
-//    WebElement productPrice;
-    @FindBy (xpath = "//div[@class='alertinner '] / p / strong[1]")
+
+    @FindBy(xpath = "//div[@class='alertinner '] / p / strong[1]")
     WebElement newBasketTotal;
 
     public ProfilePage clickAddToBasketButton() {
@@ -107,13 +107,13 @@ public class ProfilePage extends PageBase {
     }
 
     public boolean isNewBasketTotalCorrect() {
-        String pP =driver.findElement(By.cssSelector(".product_price .price_color")).getText();
+        String pP = driver.findElement(By.cssSelector(".product_price .price_color")).getText();
 
-        double pPrice= Double.parseDouble(pP.substring(1));
-        System.out.println("*************pP= "+pPrice);
-        double nBasketTotal= Double.parseDouble((newBasketTotal.getText()).substring(1));
+        double pPrice = Double.parseDouble(pP.substring(1));
+        System.out.println("*************pP= " + pPrice);
+        double nBasketTotal = Double.parseDouble((newBasketTotal.getText()).substring(1));
 
-        return (pPrice==nBasketTotal);
+        return (pPrice == nBasketTotal);
     }
 
 
@@ -125,8 +125,26 @@ public class ProfilePage extends PageBase {
         return new BasketPage(driver);
     }
 
+    @FindBy(css = "#language_selector .form-control")
+    WebElement languageMenu;
+
+    public ProfilePage selectLanguage(String text) {
+        Select select = new Select(languageMenu);
+        select.selectByVisibleText(text);
+        return this;
+    }
+
+    @FindBy(css = "#language_selector .btn-default")
+    WebElement goBtn;
+
+    public ProfilePage clickGoButton() {
+        click(goBtn);
+        return this;
+    }
 
 
-
-
+    public String takeTextGoButton() {
+        String text = driver.findElement(By.cssSelector("#language_selector .btn-default")).getText();
+        return text;
+    }
 }

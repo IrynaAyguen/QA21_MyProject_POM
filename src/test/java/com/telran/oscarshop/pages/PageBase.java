@@ -1,9 +1,11 @@
 package com.telran.oscarshop.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 public class PageBase {
 
@@ -42,5 +44,17 @@ public class PageBase {
         }
     }
 
+    public String takeScreenshot() {
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("screenshot/screen-" + System.currentTimeMillis() + ".png");
 
+        try {
+
+            Files.copy(tmp, screenshot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return screenshot.getAbsolutePath();
+    }
 }

@@ -1,11 +1,10 @@
 package com.telran.oscarshop.tests;
 
 import com.telran.oscarshop.data.ProductData;
+import com.telran.oscarshop.data.ShippingAddress;
 import com.telran.oscarshop.data.UserData;
-import com.telran.oscarshop.pages.BasketPage;
-import com.telran.oscarshop.pages.HomePage;
-import com.telran.oscarshop.pages.LoginRegistrationPage;
-import com.telran.oscarshop.pages.ProfilePage;
+import com.telran.oscarshop.pages.*;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,6 +22,20 @@ public class OrderTests extends TestBase{
     @Test
     public void OderPositiveTest() {
         new ProfilePage(driver).clickViewBasketButton();
-        new BasketPage(driver).clicktProceedToCheckoutButton();
+        new BasketPage(driver).clickProceedToCheckoutButton();
+        new ShippingAddressPage(driver).selectTitle("Mrs");
+        new ShippingAddressPage(driver).typeNameAndAddress(ShippingAddress.ADDRESS_FIRSTNAME, ShippingAddress.ADDRESS_LASTNAME,
+                ShippingAddress.ADDRESS_FIRSTLINE, ShippingAddress.ADDRESS_CITY, ShippingAddress.ADDRESS_POSTCODE);
+        new ShippingAddressPage(driver).selectCountry("Germany");
+        new ShippingAddressPage(driver).clickContinueBtn();
+        new PaymentPage(driver).clickContinueBtn();
+        new PreviewPage(driver).clickPlaceOrderBtn();
+        new ConfirmationPage(driver).clickContinueShoppingBtn();
+
+        new ProfilePage(driver).clickViewBasketButton();
+        Assert.assertTrue(new BasketPage(driver).verifyTextAboutEmptyBasket().contains("Your basket is empty"));
     }
 }
+
+
+

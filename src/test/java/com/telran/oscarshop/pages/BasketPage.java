@@ -1,10 +1,14 @@
 package com.telran.oscarshop.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Collection;
+
 public class BasketPage extends PageBase {
+
     public BasketPage(WebDriver driver) {
         super(driver);
     }
@@ -27,7 +31,13 @@ public class BasketPage extends PageBase {
     @FindBy(css=".btn-block")
     WebElement proceedToCheckoutBtn;
 
-    public void clicktProceedToCheckoutButton() {
+    public ShippingAddressPage clickProceedToCheckoutButton() {
         click(proceedToCheckoutBtn);
+        return new ShippingAddressPage(driver);
+    }
+
+    public String verifyTextAboutEmptyBasket() {
+        String text = driver.findElement(By.id("content_inner")).getText();
+        return text;
     }
 }
