@@ -27,12 +27,22 @@ public class TestBase {
 
    @BeforeSuite
    public void setUp(){
+
+      //        //browser in background mode//
+//        ChromeOptions options = new ChromeOptions() ;
+//        options.addArguments("headless");
+//        //max commentiruem
+//        options.addArguments("windows-size=1200x800");
+//        driver = new ChromeDriver(options);
+//        //
+
       //driver = new ChromeDriver();
       driver = new EventFiringWebDriver(new ChromeDriver());
       driver.manage().window().maximize();
+      //driver.manage().window().setSize(new Dimension(1920,1000));/// not maximize
+
+
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-
       driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
 
       driver.register(new MyListener());

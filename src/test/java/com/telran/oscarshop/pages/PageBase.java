@@ -3,9 +3,12 @@ package com.telran.oscarshop.pages;
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class PageBase {
 
@@ -56,5 +59,56 @@ public class PageBase {
         }
 
         return screenshot.getAbsolutePath();
+    }
+
+    public void typeWithJSExecutor(WebElement element, int x, int y, String text) {
+        if (text != null) {
+            clickWithJSExecutor(element, x, y);
+            element.clear();
+            element.sendKeys(text);
+        }
+
+
+    }
+
+    public void clickWithJSExecutor(WebElement element, int x, int y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+        element.click();
+    }
+
+    ///additional  4 methods////
+    public void waitUntilElementToBeClickable(WebElement element, int time) {
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.elementToBeClickable(element));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void waitUntilElementVisible(WebElement element, int time) {
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOf(element));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void waitUntilElementInVisible(WebElement element, int time) {
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.invisibilityOf(element));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void waitUntilAllElementsVisible(List<WebElement> elements, int time) {
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOfAllElements(elements));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

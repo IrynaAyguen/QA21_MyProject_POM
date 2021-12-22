@@ -4,7 +4,7 @@ import com.telran.oscarshop.data.ProductData;
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.pages.HomePage;
 import com.telran.oscarshop.pages.LoginRegistrationPage;
-import com.telran.oscarshop.pages.ProfilePage;
+import com.telran.oscarshop.pages.ProductPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,38 +19,45 @@ public class SearchProductTests extends TestBase{
 
     @Test
     public void searchOfProductWithNamePositiveTest(){
-        new ProfilePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
-        Assert.assertTrue(new ProfilePage(driver).takeNameOfProduct().contains(ProductData.PRODUCT_NAME));
+        new HomePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
+        new HomePage(driver).clickOnSearchButton();
+        Assert.assertTrue(new ProductPage(driver).takeNameOfProduct().contains(ProductData.PRODUCT_NAME));
     }
 
     @Test
     public void searchOfProductWithSearchWordPositiveTest(){
-        new ProfilePage(driver).typeInSearchFieldInput("Computer");
-        Assert.assertTrue(new ProfilePage(driver).verifyNumberOfResults().contains("36"));  ///////36
+        new HomePage(driver).typeInSearchFieldInput("Computer");
+        new HomePage(driver).clickOnSearchButton();
+        Assert.assertTrue(new ProductPage(driver).verifyNumberOfResults().contains("36"));  ///////36
     }
 
     @Test
     public void verifyEmptySearchFieldTest(){
-        new ProfilePage(driver).typeInSearchFieldInput("  ");
-        Assert.assertTrue(new ProfilePage(driver).verifySearchField().contains("Products matching \"\""));
+        new HomePage(driver).typeInSearchFieldInput("  ");
+        new HomePage(driver).clickOnSearchButton();
+        Assert.assertTrue(new ProductPage(driver).verifySearchField().contains("Products matching \"\""));
     }
 
     @Test
     public void verifyTitleOfFoundedProductsListTest(){
-        new ProfilePage(driver).typeInSearchFieldInput("11111");
-        Assert.assertTrue(new ProfilePage(driver).verifySearchField().contains("Products matching \"11111\""));
+        new HomePage(driver).typeInSearchFieldInput("Computer");
+        new HomePage(driver).clickOnSearchButton();
+
+        Assert.assertTrue(new ProductPage(driver).verifySearchField().contains("Products matching \"Computer\""));
     }
 
     @Test
     public void searchOfProductNegativeTest(){
-        new ProfilePage(driver).typeInSearchFieldInput("11111");
-        Assert.assertTrue(new ProfilePage(driver).verifyNullResults().contains("Found 0 results."));
+        new HomePage(driver).typeInSearchFieldInput("11111");
+        new HomePage(driver).clickOnSearchButton();
+        Assert.assertTrue(new ProductPage(driver).verifyNullResults().contains("Found 0 results."));
     }
 
     @Test
     public void numberOfFoundedProductsOnPageTest(){
-        new ProfilePage(driver).typeInSearchFieldInput("Computer");
-        Assert.assertTrue(new ProfilePage(driver).isNumberOfProductsOnPageEqualsListSizeOnPage());
+        new HomePage(driver).typeInSearchFieldInput("Computer");
+        new HomePage(driver).clickOnSearchButton();
+        Assert.assertTrue(new ProductPage(driver).isNumberOfProductsOnPageEqualsListSizeOnPage());
     }
 
 }

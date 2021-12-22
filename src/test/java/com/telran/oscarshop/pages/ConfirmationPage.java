@@ -13,8 +13,8 @@ public class ConfirmationPage extends PageBase{
     @FindBy(css=".col-sm-offset-4 .btn-lg")
     WebElement continueShoppingBtn;
 
-    public ProfilePage clickContinueShoppingBtn() {
+    public ProductPage clickContinueShoppingBtn() {
         click (continueShoppingBtn);
-        return new ProfilePage(driver);
+        return new ProductPage(driver);
     }
 }

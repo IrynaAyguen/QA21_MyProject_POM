@@ -14,14 +14,14 @@ public class OrderTests extends TestBase{
     public void ensurePreconditions(){
         new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
-        new ProfilePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
-        new ProfilePage(driver).clickAddToBasketButton();
-
+        new HomePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
+        new HomePage(driver).clickOnSearchButton();
+        new ProductPage(driver).clickAddToBasketButton();
     }
 
     @Test
     public void OderPositiveTest() {
-        new ProfilePage(driver).clickViewBasketButton();
+        new ProductPage(driver).clickViewBasketButton();
         new BasketPage(driver).clickProceedToCheckoutButton();
         new ShippingAddressPage(driver).selectTitle("Mrs");
         new ShippingAddressPage(driver).typeNameAndAddress(ShippingAddress.ADDRESS_FIRSTNAME, ShippingAddress.ADDRESS_LASTNAME,
@@ -32,7 +32,7 @@ public class OrderTests extends TestBase{
         new PreviewPage(driver).clickPlaceOrderBtn();
         new ConfirmationPage(driver).clickContinueShoppingBtn();
 
-        new ProfilePage(driver).clickViewBasketButton();
+        new ProductPage(driver).clickViewBasketButton();
         Assert.assertTrue(new BasketPage(driver).verifyTextAboutEmptyBasket().contains("Your basket is empty"));
     }
 }
