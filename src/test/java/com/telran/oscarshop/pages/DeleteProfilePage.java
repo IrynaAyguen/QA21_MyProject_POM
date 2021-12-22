@@ -37,4 +37,10 @@ public class DeleteProfilePage extends PageBase{
         click(deleteBtn);
         return new HomePage(driver);
     }
+
+
+    public DeleteProfilePage typePasswordForDeleteField(String pass) {
+        type(passwordField, pass);
+        return this;
+    }
 }

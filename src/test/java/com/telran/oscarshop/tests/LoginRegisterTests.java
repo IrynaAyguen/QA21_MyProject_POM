@@ -2,8 +2,10 @@ package com.telran.oscarshop.tests;
 
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.helpers.DataProviders;
+import com.telran.oscarshop.pages.DeleteProfilePage;
 import com.telran.oscarshop.pages.HomePage;
 import com.telran.oscarshop.pages.LoginRegistrationPage;
+import com.telran.oscarshop.pages.ProfilePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,12 +17,17 @@ public class LoginRegisterTests extends TestBase{
         new HomePage(driver).getLoginRegisterPage();
     }
 
-    @Test(enabled = false)
+    @Test (enabled = false)
     public void registrationAndLoginPositiveTest(){
-        new LoginRegistrationPage(driver).registrationAndLogin("test10@test10.de","Test10123!", "Test10123!");
+        new LoginRegistrationPage(driver).registrationAndLogin("test11@test11.de","Test11123!", "Test11123!");
         Assert.assertTrue(new HomePage(driver).isLogoutLinkPresent());
-        new HomePage(driver).clickOnLogoutLink();
+
+        new HomePage(driver).clickOnAccountLink();
+        new ProfilePage(driver).clickOnDeleteProfileButton();
+        new DeleteProfilePage(driver).typePasswordForDeleteField("Test11123!");
+        new DeleteProfilePage(driver).clickOnDeleteButton();
     }
+
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "userNegativeRegistrationUsingFileCSV")
     public void registrationWithDataProviderNegativeTest(String eMail, String password1, String password2) {
