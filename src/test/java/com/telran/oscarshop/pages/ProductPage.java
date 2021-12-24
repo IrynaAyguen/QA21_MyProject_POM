@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.Collection;
 import java.util.List;
 
 public class ProductPage extends PageBase {
@@ -69,13 +68,13 @@ public class ProductPage extends PageBase {
 
 
     @FindBy(css = ".btn.btn-primary.btn-block")
-    WebElement addToBasketBtn;
+    WebElement addToBasketBtnFromList;
 
     @FindBy(xpath = "//div[@class='alertinner '] / p / strong[1]")
     WebElement newBasketTotal;
 
-    public ProductPage clickAddToBasketButton() {
-        click(addToBasketBtn);
+    public ProductPage clickAddToBasketButtonFromList() {
+        click(addToBasketBtnFromList);
         return this;
     }
 
@@ -93,7 +92,7 @@ public class ProductPage extends PageBase {
     @FindBy(xpath = "//span[@class='btn-group']")
     WebElement viewBasketBtn;
 
-    public BasketPage clickViewBasketButton() {
+    public BasketPage clickOnViewBasketButton() {
         click(viewBasketBtn);
         return new BasketPage(driver);
     }
@@ -135,4 +134,86 @@ public class ProductPage extends PageBase {
     }
 
 
+    @FindBy(xpath = "//li[2]//ul//li[1]//a[@href='/en-gb/catalogue/category/books/fiction_3/']")
+    WebElement fictionCatalogue;
+
+    public ProductPage selectFictionCategory() {
+        fictionCatalogue.click();
+        return this;
+    }
+
+    @FindBy(xpath = "//li[2]//ul//li[2]//a[@href='/en-gb/catalogue/category/books/non-fiction_5/']")
+    WebElement nonFictionCatalogue;
+
+    public ProductPage selectNonFictionCategory() {
+        nonFictionCatalogue.click();
+        return this;
+    }
+
+
+    @FindBy(xpath = "//div[@class='page-header action'][contains(.,'Fiction')]")
+    WebElement fictionTitle;
+
+    public boolean isFictionCategoryDisplayed() {
+        return fictionTitle.isDisplayed();
+    }
+
+
+    @FindBy(xpath = "//div[@class='page-header action'][contains(.,'Non-Fiction')]")
+    WebElement nonFictionTitle;
+
+    public boolean isNonFictionCategoryDisplayed() {
+        return nonFictionTitle.isDisplayed();
+    }
+
+
+    public String getProductNameFromList(int number) {
+        return driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a")).getText();
+    }
+
+
+    public ProductPage clickOnProductNameFromList(int number) {
+        driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a")).click();
+        return this;
+    }
+
+
+    @FindBy(css = "h1")
+    WebElement productName;
+
+    public String getProductName() {
+        return productName.getText();
+    }
+
+
+    @FindBy(id = "add_to_basket_form")
+    WebElement addToBasketBtn;
+
+    public ProductPage clickOnAddToBasketButton() {
+        click(addToBasketBtn);
+        return this;
+    }
+
+
+    @FindBy(xpath = "//div[@class='col-sm-6 product_main'] //p[1]")
+    WebElement price;
+
+    public double getProductPrice() {
+        double pPrice = Double.parseDouble(price.getText().replace("£",""));
+        return pPrice;
+    }
+
+    public ProductPage clickOnAddToBasketFromList(int number) {
+        //driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a")).click();
+        driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") form")).click();
+        return this;
+    }
+
+
+    @FindBy(xpath = "//div[@id='messages'] //div[1]//div")
+    WebElement message;
+
+    public String getMessage() {
+        return message.getText();
+    }
 }

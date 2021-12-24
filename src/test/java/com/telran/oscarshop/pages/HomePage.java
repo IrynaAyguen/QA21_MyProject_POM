@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Collection;
+
 public class HomePage extends PageBase{
 
     public HomePage(WebDriver driver) {
@@ -100,4 +102,46 @@ public class HomePage extends PageBase{
     public boolean isLoginOrRegisterLinkPresent() {
         return isElementPresent(By.id("login_link"));
     }
+
+
+    @FindBy(css = ".h1 a")
+    WebElement logoLink;
+
+    public HomePage clickOnLogo() {
+        click(logoLink);
+        return this;
+    }
+
+    public String getSubtitleOfHomePage() {
+        String text = driver.findElement(By.cssSelector(".well-blank .sub-header h2")).getText();
+        return text;
+    }
+
+
+    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[1]")
+    WebElement allProductsMenuItem;
+
+    public ProductPage selectAllProductsCategory() {
+        click(allProductsMenuItem);
+        return new ProductPage(driver);
+    }
+    
+    
+    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[3]")
+    WebElement clothingMenuItem;
+
+    public ProductPage selectClothingCategory() {
+        click(clothingMenuItem);
+        return new ProductPage(driver);
+    }
+
+
+    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[6]")
+    WebElement offersMenuItem;
+
+    public ProductPage selectOffersCategory() {
+        click(offersMenuItem);
+        return new ProductPage(driver);
+    }
+
 }

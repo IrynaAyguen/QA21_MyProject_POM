@@ -1,6 +1,7 @@
 package com.telran.oscarshop.tests;
 
 import com.telran.oscarshop.helpers.MyListener;
+import com.telran.oscarshop.helpers.PropertiesLoader;
 import com.telran.oscarshop.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,11 +25,13 @@ public class TestBase {
 
    Logger logger = LoggerFactory.getLogger(TestBase.class);
 
+   public static String baseURL = PropertiesLoader.loadProperty("url");  //  from PropertiesLoader
 
    @BeforeSuite
    public void setUp(){
 
       //        //browser in background mode//
+//        //driver= commentiruem
 //        ChromeOptions options = new ChromeOptions() ;
 //        options.addArguments("headless");
 //        //max commentiruem
@@ -41,9 +44,10 @@ public class TestBase {
       driver.manage().window().maximize();
       //driver.manage().window().setSize(new Dimension(1920,1000));/// not maximize
 
-
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
+
+      //driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
+      driver.get(baseURL);                  //  from PropertiesLoader
 
       driver.register(new MyListener());
    }

@@ -2,6 +2,7 @@ package com.telran.oscarshop.tests;
 
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.helpers.DataProviders;
+import com.telran.oscarshop.helpers.PropertiesLoader;
 import com.telran.oscarshop.pages.DeleteProfilePage;
 import com.telran.oscarshop.pages.HomePage;
 import com.telran.oscarshop.pages.LoginRegistrationPage;
@@ -10,21 +11,25 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginRegisterTests extends TestBase{
+public class RegisterTests extends TestBase{
+
+    public  static String email = PropertiesLoader.loadProperty("valid.email");
+    public  static String password = PropertiesLoader.loadProperty("valid.password");
 
     @BeforeMethod
     public void ensurePreconditions(){
         new HomePage(driver).getLoginRegisterPage();
     }
 
-    @Test (enabled = false)
+
+    @Test(enabled = false)
     public void registrationAndLoginPositiveTest(){
-        new LoginRegistrationPage(driver).registrationAndLogin("test11@test11.de","Test11123!", "Test11123!");
+        new LoginRegistrationPage(driver).registrationAndLogin(email,password, password);
         Assert.assertTrue(new HomePage(driver).isLogoutLinkPresent());
 
         new HomePage(driver).clickOnAccountLink();
         new ProfilePage(driver).clickOnDeleteProfileButton();
-        new DeleteProfilePage(driver).typePasswordForDeleteField("Test11123!");
+        new DeleteProfilePage(driver).typePasswordForDeleteField(password);
         new DeleteProfilePage(driver).clickOnDeleteButton();
     }
 
@@ -34,22 +39,6 @@ public class LoginRegisterTests extends TestBase{
         new LoginRegistrationPage(driver).registrationNegative(eMail, password1, password2);
         Assert.assertTrue(new LoginRegistrationPage(driver).isLoginOrRegisterLinkPresent());
     }
-
-
-
-    @Test
-    public void LoginPositiveTest(){
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
-        Assert.assertTrue(new HomePage(driver).isLogoutLinkPresent());
-        new HomePage(driver).clickOnLogoutLink();
-    }
-
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "userNegativeLoginUsingFileCSV")
-    public void loginWithDataProviderNegativeTest(String eMail, String password) {
-        new LoginRegistrationPage(driver).loginNegative(eMail, password);
-        Assert.assertTrue(new LoginRegistrationPage(driver).isLoginOrRegisterLinkPresent());
-    }
-
 
 
 
@@ -76,21 +65,6 @@ public class LoginRegisterTests extends TestBase{
                 .contains("two password fields didn't match"));
     }
 
-
-  ///////////////////
-
-    @Test
-    public void verifyMessageByLoginWithIncorrectEmailOrPasswordTest(){
-        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL,"123456789");
-        Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutIncorrectData()
-                .contains("Please enter a correct username and password"));
-    }
-
-    @Test
-    public void verifyIsMessagePresentAboutLoginWithEmptyPasswordFieldTest(){
-        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL,"");
-        Assert.assertTrue(new LoginRegistrationPage(driver).isMessagePresent());
-    }
 
 
 

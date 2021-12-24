@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Collection;
+import java.util.List;
 
 public class BasketPage extends PageBase {
 
@@ -18,7 +19,7 @@ public class BasketPage extends PageBase {
     @FindBy(css = ".input-group-btn .btn.btn-default")
     WebElement updateBtn;
 
-    public BasketPage typeQuantity() {
+    public BasketPage typeZeroQuantity() {
         type(quantity, "0");
         return this;
     }
@@ -28,7 +29,7 @@ public class BasketPage extends PageBase {
         return this;
     }
 
-    @FindBy(css=".btn-block")
+    @FindBy(css = ".btn-block")
     WebElement proceedToCheckoutBtn;
 
     public ShippingAddressPage clickProceedToCheckoutButton() {
@@ -39,5 +40,56 @@ public class BasketPage extends PageBase {
     public String verifyTextAboutEmptyBasket() {
         String text = driver.findElement(By.id("content_inner")).getText();
         return text;
+    }
+
+    public String getTitleOfBasketPage() {
+        String text = driver.findElement(By.cssSelector(".action h1")).getText();
+        return text;
+    }
+
+
+    @FindBy(css = ".col-sm-1 .price_color")
+    WebElement priceInBasket;
+
+    public double getProductPriceInBasketPage() {
+        double pPriceInBasket = Double.parseDouble(priceInBasket.getText().replace("£", ""));
+        return pPriceInBasket;
+    }
+
+
+    @FindBy(css = "h3 a")
+    WebElement productNameinBasket;
+
+    public String getProductNameInBasket() {
+        return productNameinBasket.getText();
+    }
+
+
+    @FindBy(css = ".basket-items")
+    List<WebElement> itemsList;
+
+    public boolean isTwoItemsInBasket() {
+        return (itemsList.size() == 2);
+    }
+
+
+    public boolean isTotalSumCorrect() {
+        double sum = 0;
+        for (int i = 1; i <= itemsList.size(); i++) {
+            double totalOfItem = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
+                    .getText().replace("£", ""));
+            sum = sum + totalOfItem;
+
+        }
+        double totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+                .getText().replace("£", ""));
+
+        return (sum == totalOfBasket);
+    }
+
+    public double getTotalInBasket() {
+        double totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+                .getText().replace("£", ""));
+        return totalOfBasket;
     }
 }

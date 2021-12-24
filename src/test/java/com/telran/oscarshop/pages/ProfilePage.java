@@ -59,4 +59,13 @@ public class ProfilePage extends PageBase {
     public String takeMessageText() {
         return messagePassUpdated.getText();
     }
+
+
+    @FindBy(xpath = "//a[@href='/en-gb/accounts/orders/']")
+    WebElement orderHistoryLink;
+
+    public OrderHistoryPage clickOnOrderHistoryLink() {
+        click(orderHistoryLink);
+        return new OrderHistoryPage(driver);
+    }
 }
