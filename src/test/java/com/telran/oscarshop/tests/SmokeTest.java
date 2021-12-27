@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class SmokeTest extends TestBase{
 
     @Test
-    public void userCanOderProductPositiveTest() {
+    public void userCanOrderProductPositiveTest() {
 
         new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
