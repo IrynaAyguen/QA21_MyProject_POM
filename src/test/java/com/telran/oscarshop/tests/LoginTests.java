@@ -12,7 +12,10 @@ public class LoginTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        new HomePage(driver).getLoginRegisterPage();
+        if (new HomePage(driver).isLogoutLinkPresent()) {
+            new HomePage(driver).clickOnLogoutLink();
+        }
+        new HomePage(driver).getLoginRegisterPage();/////////////
     }
 
 

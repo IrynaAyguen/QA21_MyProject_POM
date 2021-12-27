@@ -118,7 +118,7 @@ public class HomePage extends PageBase{
     }
 
 
-    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[1]")
+    @FindBy(xpath = "//a[@href='/en-gb/catalogue/']")
     WebElement allProductsMenuItem;
 
     public ProductPage selectAllProductsCategory() {
@@ -127,7 +127,7 @@ public class HomePage extends PageBase{
     }
     
     
-    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[3]")
+    @FindBy(xpath = "//a[@href='/en-gb/catalogue/category/clothing_1/']")
     WebElement clothingMenuItem;
 
     public ProductPage selectClothingCategory() {
@@ -136,7 +136,7 @@ public class HomePage extends PageBase{
     }
 
 
-    @FindBy(xpath = "//ul[@id='browse'] /li[1] /ul[1] /li[6]")
+    @FindBy(xpath = "//a[@href='/en-gb/offers/']")
     WebElement offersMenuItem;
 
     public ProductPage selectOffersCategory() {

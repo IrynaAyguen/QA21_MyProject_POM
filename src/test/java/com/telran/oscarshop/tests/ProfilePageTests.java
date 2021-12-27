@@ -11,7 +11,10 @@ public class ProfilePageTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions(){
-        new HomePage(driver).getLoginRegisterPage();
+        if (new HomePage(driver).isLogoutLinkPresent()) {
+            new HomePage(driver).clickOnLogoutLink();
+        }
+        new HomePage(driver).getLoginRegisterPage();//////////////
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
         new HomePage(driver).clickOnAccountLink();
     }

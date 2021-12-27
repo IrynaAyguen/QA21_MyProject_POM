@@ -18,7 +18,10 @@ public class RegisterTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions(){
-        new HomePage(driver).getLoginRegisterPage();
+        if (new HomePage(driver).isLogoutLinkPresent()) {
+            new HomePage(driver).clickOnLogoutLink();
+        }
+        new HomePage(driver).getLoginRegisterPage(); /////
     }
 
 
@@ -60,7 +63,7 @@ public class RegisterTests extends TestBase{
 
     @Test
     public void verifyMessageByRegistrationWithNotMatchingPasswordsTest(){
-        new LoginRegistrationPage(driver).registrationNegative("test8@test8.de","Test8123!", "Test8123!!!!!");
+        new LoginRegistrationPage(driver).registrationNegative("test20@test20.de","Test20123!", "Test20123!!!!!");
         Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutNotMatchingPasswords()
                 .contains("two password fields didn't match"));
     }

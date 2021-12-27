@@ -14,7 +14,11 @@ public class ProductPageTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions(){
-        new HomePage(driver).selectBooksCategory();
+        if (new HomePage(driver).isLogoutLinkPresent()) {
+            new HomePage(driver).clickOnLogoutLink();
+        }
+        new HomePage(driver).clickOnLogo();
+        new HomePage(driver).selectBooksCategory();//////
     }
 
 

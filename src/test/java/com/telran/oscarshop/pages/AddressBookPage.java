@@ -21,7 +21,7 @@ public class AddressBookPage extends PageBase{
     }
 
 
-    @FindBy(xpath = "//a[@href='/en-gb/accounts/addresses/396/']")
+    @FindBy(css = "tbody tr:nth-child(2) td:nth-child(2) div.btn-group > a")
     WebElement editAddressBookBtn;
 
     public EditAddressPage clickEditButton() {
