@@ -42,7 +42,7 @@ public class SmokeTest extends TestBase{
 
         new HomePage(driver).clickOnAccountLink();
         new ProfilePage(driver).clickOnOrderHistoryLink();
-        double totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
+        //double totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
 
         //Assert.assertEquals(totalInBasket,totalInOrderHistory);
     }
