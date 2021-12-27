@@ -76,7 +76,8 @@ public class BasketPage extends PageBase {
 
 
     public boolean isTotalSumCorrect() {
-        double sum = 0.0;
+        double sum;
+        sum = 0.0;
         for (int i = 1; i <= itemsList.size(); i++) {
             double totalOfItem = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
                     .getText().replace("£", ""));
@@ -88,6 +89,7 @@ public class BasketPage extends PageBase {
 
         return (sum == totalOfBasket);
     }
+
 
     public double getTotalInBasket() {
         double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
