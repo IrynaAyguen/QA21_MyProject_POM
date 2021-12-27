@@ -95,9 +95,14 @@ public class BasketPage extends PageBase {
     }
 
 
-    public double getTotalInBasket() {
-        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
-                .getText().replace("£", ""));
+//    public double getTotalInBasket() {
+//        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+//                .getText().replace("£", ""));
+//        return totalOfBasket;
+//    }
+    public String getTotalInBasket() {
+        String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
+                .getText();
         return totalOfBasket;
     }
 }

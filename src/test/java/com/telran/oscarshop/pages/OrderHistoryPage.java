@@ -14,10 +14,13 @@ public class OrderHistoryPage extends PageBase{
     @FindBy(xpath = "//tbody/ tr[2] /td[3]")
     WebElement totalInOrderHistory;
 
-    public double getTotalInOrderHistory() {
-        return Double.parseDouble(totalInOrderHistory.getText().replace("£",""));
-    }
+//    public double getTotalInOrderHistory() {
+//        return Double.parseDouble(totalInOrderHistory.getText().replace("£",""));
+//    }
 
+    public String getTotalInOrderHistory() {
+        return totalInOrderHistory.getText();
+    }
 
     @FindBy(css="tbody:nth-child(1) tr:nth-child(2) td:nth-child(1) > a")
     WebElement orderNummerLink;
