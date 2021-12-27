@@ -26,7 +26,6 @@ public class SmokeTest extends TestBase{
         Assert.assertTrue(new BasketPage(driver).isTwoItemsInBasket());
        // Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
 
-        //double totalInBasket = new BasketPage(driver).getTotalInBasket();
         String totalInBasket = new BasketPage(driver).getTotalInBasket();
         new BasketPage(driver).clickProceedToCheckoutButton();
         new ShippingAddressPage(driver).selectTitle("Mrs");
@@ -43,9 +42,8 @@ public class SmokeTest extends TestBase{
 
         new HomePage(driver).clickOnAccountLink();
         new ProfilePage(driver).clickOnOrderHistoryLink();
-        //double totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
-        String totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
 
+        String totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
         Assert.assertEquals(totalInBasket,totalInOrderHistory);
     }
 }

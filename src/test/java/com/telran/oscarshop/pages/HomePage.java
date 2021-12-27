@@ -39,6 +39,7 @@ public class HomePage extends PageBase{
     public HomePage selectLanguage(String text) {
         Select select = new Select(languageMenu);
         select.selectByVisibleText(text);
+        pause(2000);
         return this;
     }
 
@@ -109,6 +110,7 @@ public class HomePage extends PageBase{
 
     public HomePage clickOnLogo() {
         click(logoLink);
+        pause(2000);
         return this;
     }
 

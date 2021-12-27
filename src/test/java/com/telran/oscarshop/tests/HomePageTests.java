@@ -55,6 +55,7 @@ public class HomePageTests extends TestBase{
     @Test
     public void guestCanSelectOffersCategoryFromMenuTest(){
         new HomePage(driver).clickOnLogo();
+
         new HomePage(driver).selectOffersCategory();  //////////
 
         Assert.assertTrue(new ProductPage(driver).isItProductPage());
