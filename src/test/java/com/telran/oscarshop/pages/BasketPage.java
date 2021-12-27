@@ -52,8 +52,8 @@ public class BasketPage extends PageBase {
     @FindBy(css = ".col-sm-1 .price_color")
     WebElement priceInBasket;
 
-    public double getProductPriceInBasketPage() {
-        double pPriceInBasket = parseDouble(priceInBasket.getText().replace("£", ""));
+    public String getProductPriceInBasketPage() {
+        String pPriceInBasket = priceInBasket.getText();
         return pPriceInBasket;
     }
 

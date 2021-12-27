@@ -26,7 +26,7 @@ public class HomePageTests extends TestBase{
     @Test
     public void guestCanSelectAllProductsCategoryFromMenuTest(){
         new HomePage(driver).clickOnLogo();
-        new HomePage(driver).selectAllProductsCategory(); ////////////////
+        new HomePage(driver).selectAllProductsCategory();
 
         Assert.assertTrue(new ProductPage(driver).isItProductPage());
         Assert.assertTrue(new ProductPage(driver).verifyTitleBooks().contains("All products"));
@@ -35,7 +35,7 @@ public class HomePageTests extends TestBase{
     @Test
     public void guestCanSelectClothingCategoryFromMenuTest(){
         new HomePage(driver).clickOnLogo();
-        new HomePage(driver).selectClothingCategory();   ////////////
+        new HomePage(driver).selectClothingCategory();
 
         Assert.assertTrue(new ProductPage(driver).isItProductPage());
         Assert.assertTrue(new ProductPage(driver).verifyTitleBooks().contains("Clothing"));
@@ -45,7 +45,7 @@ public class HomePageTests extends TestBase{
     @Test
     public void guestCanSelectBooksCategoryFromMenuTest(){
         new HomePage(driver).clickOnLogo();
-        new HomePage(driver).selectBooksCategory();   ///////////
+        new HomePage(driver).selectBooksCategory();
 
         Assert.assertTrue(new ProductPage(driver).isItProductPage());
         Assert.assertTrue(new ProductPage(driver).verifyTitleBooks().contains("Books"));
@@ -56,7 +56,7 @@ public class HomePageTests extends TestBase{
     public void guestCanSelectOffersCategoryFromMenuTest(){
         new HomePage(driver).clickOnLogo();
 
-        new HomePage(driver).selectOffersCategory();  //////////
+        new HomePage(driver).selectOffersCategory();
 
         Assert.assertTrue(new ProductPage(driver).isItProductPage());
         Assert.assertTrue(new ProductPage(driver).verifyTitleBooks().contains("Offers"));
@@ -73,16 +73,16 @@ public class HomePageTests extends TestBase{
     }
 
 
-    @Test
-    public void guestCanSelectLanguageTest(){
-        new HomePage(driver).selectLanguage("Deutsch");
-        new HomePage(driver).clickGoButton();
-
-        Assert.assertTrue(new HomePage(driver).takeTextOfGoButton().contains("Ausführen"));   /////////////
-
-        new HomePage(driver).selectLanguage("British English");
-        new HomePage(driver).clickGoButton();
-    }
+//    @Test
+//    public void guestCanSelectLanguageTest(){
+//        new HomePage(driver).selectLanguage("Deutsch");
+//        new HomePage(driver).clickGoButton();
+//
+//        Assert.assertTrue(new HomePage(driver).takeTextOfGoButton().contains("Ausführen"));
+//
+//        new HomePage(driver).selectLanguage("British English");
+//        new HomePage(driver).clickGoButton();
+//    }
 
 
     @Test
@@ -98,7 +98,7 @@ public class HomePageTests extends TestBase{
     public void searchOfProductWithNamePositiveTest(){
         new HomePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
         new HomePage(driver).clickOnSearchButton();
-        Assert.assertTrue(new ProductPage(driver).takeNameOfProduct().contains(ProductData.PRODUCT_NAME));///////////
+        Assert.assertTrue(new ProductPage(driver).takeNameOfProduct().contains(ProductData.PRODUCT_NAME));
     }
 
 
@@ -106,7 +106,7 @@ public class HomePageTests extends TestBase{
     public void verifyEmptySearchFieldTest(){
         new HomePage(driver).typeInSearchFieldInput("  ");
         new HomePage(driver).clickOnSearchButton();
-        Assert.assertTrue(new ProductPage(driver).verifySearchField().contains("Products matching \"\""));///////
+        Assert.assertTrue(new ProductPage(driver).verifySearchField().contains("Products matching \"\""));
     }
 
 
@@ -114,7 +114,7 @@ public class HomePageTests extends TestBase{
     public void searchOfProductNegativeTest(){
         new HomePage(driver).typeInSearchFieldInput("11111");
         new HomePage(driver).clickOnSearchButton();
-        Assert.assertTrue(new ProductPage(driver).verifyNullResults().contains("Found 0 results."));//////////////
+        Assert.assertTrue(new ProductPage(driver).verifyNullResults().contains("Found 0 results."));
     }
 
 
@@ -125,7 +125,7 @@ public class HomePageTests extends TestBase{
         new ProductPage(driver).clickAddToBasketButtonFromList();
         new ProductPage(driver).clickOnViewBasketButton();
 
-        Assert.assertTrue(new BasketPage(driver).getTitleOfBasketPage().contains("Basket"));//////////////
+        Assert.assertTrue(new BasketPage(driver).getTitleOfBasketPage().contains("Basket"));
     }
 
 
@@ -135,7 +135,7 @@ public class HomePageTests extends TestBase{
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
         new HomePage(driver).clickOnAccountLink();
 
-        Assert.assertTrue(new ProfilePage(driver).verifyTitleOfPage().contains("Profile"));///////
+        Assert.assertTrue(new ProfilePage(driver).verifyTitleOfPage().contains("Profile"));
 
         Assert.assertEquals(new ProfilePage(driver).getEmailOfUserFromProfilePge(),UserData.USER_EMAIL);
     }
@@ -143,7 +143,7 @@ public class HomePageTests extends TestBase{
 
     @Test
     public void userCanLogoutTest(){
-        new HomePage(driver).getLoginRegisterPage(); /////////////////
+        new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
         new HomePage(driver).clickOnLogoutLink();
 

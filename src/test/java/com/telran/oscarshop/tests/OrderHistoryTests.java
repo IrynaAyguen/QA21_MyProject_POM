@@ -14,7 +14,7 @@ public class OrderHistoryTests extends TestBase{
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
-        new HomePage(driver).getLoginRegisterPage();////////
+        new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
         new HomePage(driver).selectBooksCategory();
         new ProductPage(driver).clickOnAddToBasketFromList(1);

@@ -15,7 +15,7 @@ public class LoginTests extends TestBase {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
-        new HomePage(driver).getLoginRegisterPage();/////////////
+        new HomePage(driver).getLoginRegisterPage();
     }
 
 

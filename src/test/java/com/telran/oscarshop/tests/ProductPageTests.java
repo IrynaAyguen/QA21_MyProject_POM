@@ -18,7 +18,7 @@ public class ProductPageTests extends TestBase{
             new HomePage(driver).clickOnLogoutLink();
         }
         new HomePage(driver).clickOnLogo();
-        new HomePage(driver).selectBooksCategory();//////
+        new HomePage(driver).selectBooksCategory();
     }
 
 
@@ -49,11 +49,10 @@ public class ProductPageTests extends TestBase{
     public void guestCanAddFirstProductInListToBasketTest() {
         new ProductPage(driver).clickOnProductNameFromList(1);
         new ProductPage(driver).clickOnAddToBasketButton();
-        double productPrice = new ProductPage(driver).getProductPrice();
+        String productPrice = new ProductPage(driver).getProductPrice();
         String productName = new ProductPage(driver).getProductName();
         new ProductPage(driver).clickOnViewBasketButton();
-        double productPriceInBasket = new BasketPage(driver).getProductPriceInBasketPage();
-        //System.out.println(productPrice+ "  " +productPriceInBasket );
+        String productPriceInBasket = new BasketPage(driver).getProductPriceInBasketPage();
         String productNameInBasket = new BasketPage(driver).getProductNameInBasket();
 
         Assert.assertEquals(productPrice,productPriceInBasket);
@@ -63,18 +62,6 @@ public class ProductPageTests extends TestBase{
 
     }
 
-    @Test
-    public void userCanAddFoundedProductToBasketTest() {
-        new HomePage(driver).typeInSearchFieldInput(ProductData.PRODUCT_NAME);
-        new HomePage(driver).clickOnSearchButton();
-        new ProductPage(driver).clickAddToBasketButtonFromList();
-
-        Assert.assertTrue(new ProductPage(driver).isNewBasketTotalCorrect());
-
-        new ProductPage(driver).clickOnViewBasketButton();
-        new BasketPage(driver).typeZeroQuantity();
-        new BasketPage(driver).clickUpdate();
-    }
 
     @Test
     public void numberOfFoundedProductsOnPageTest(){

@@ -6,10 +6,10 @@
         <classes>
 
             <class name="com.telran.oscarshop.tests.RegisterTests"/>
-            <class name="com.telran.oscarshop.tests.LoginTests"/>
-            <class name="com.telran.oscarshop.tests.ProfilePageTests"/>
-            <class name="com.telran.oscarshop.tests.OrderHistoryTests"/>
-            <class name="com.telran.oscarshop.tests.AddressBookTests"/>
+<!--            <class name="com.telran.oscarshop.tests.LoginTests"/>-->
+<!--            <class name="com.telran.oscarshop.tests.ProfilePageTests"/>-->
+<!--            <class name="com.telran.oscarshop.tests.OrderHistoryTests"/>-->
+<!--            <class name="com.telran.oscarshop.tests.AddressBookTests"/>-->
             <class name="com.telran.oscarshop.tests.ProductPageTests"/>
             <class name="com.telran.oscarshop.tests.HomePageTests"/>
 

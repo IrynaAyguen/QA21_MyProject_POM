@@ -80,12 +80,10 @@ public class ProductPage extends PageBase {
 
     public boolean isNewBasketTotalCorrect() {
         String pP = driver.findElement(By.cssSelector(".product_price .price_color")).getText();
-
-        double pPrice = Double.parseDouble(pP.substring(1));
-        System.out.println("*************pP= " + pPrice);
-        double nBasketTotal = Double.parseDouble((newBasketTotal.getText()).substring(1));
-
-        return (pPrice == nBasketTotal);
+        String nBasketTotal = newBasketTotal.getText();
+        System.out.println("pp"+pP+"pp");
+        System.out.println("total"+nBasketTotal+"total");
+        return (pP == nBasketTotal);
     }
 
 
@@ -198,8 +196,8 @@ public class ProductPage extends PageBase {
     @FindBy(xpath = "//div[@class='col-sm-6 product_main'] //p[1]")
     WebElement price;
 
-    public double getProductPrice() {
-        double pPrice = Double.parseDouble(price.getText().replace("£",""));
+    public String getProductPrice() {
+        String pPrice = price.getText();
         return pPrice;
     }
 

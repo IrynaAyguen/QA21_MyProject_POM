@@ -71,7 +71,7 @@ public class LoginRegistrationPage extends PageBase {
     }
 
     public String getMessageAboutExistingUser() {
-        String message = driver.findElement(By.xpath("//* [.=' A user with that email address already exists']")).getText();
+        String message = driver.findElement(By.xpath("//span[@class='error-block']")).getText();
         return message;
     }
 
