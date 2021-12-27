@@ -2,6 +2,7 @@ package com.telran.oscarshop.tests;
 
 import com.telran.oscarshop.helpers.MyListener;
 import com.telran.oscarshop.helpers.PropertiesLoader;
+import com.telran.oscarshop.pages.HomePage;
 import com.telran.oscarshop.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,6 +49,8 @@ public class TestBase {
 
       //driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
       driver.get(baseURL);                  //  from PropertiesLoader
+      new HomePage(driver).selectLanguage("British English");
+      new HomePage(driver).clickGoButton();
 
       driver.register(new MyListener());
    }
