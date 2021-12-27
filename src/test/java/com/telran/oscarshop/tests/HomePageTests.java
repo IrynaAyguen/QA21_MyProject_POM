@@ -66,6 +66,7 @@ public class HomePageTests extends TestBase{
 
     @Test
     public void checkClickabilityOfLogoTest(){
+        new HomePage(driver).clickOnLogo();
         new HomePage(driver).selectBooksCategory();
         new HomePage(driver).clickOnLogo();
 
@@ -73,16 +74,16 @@ public class HomePageTests extends TestBase{
     }
 
 
-//    @Test
-//    public void guestCanSelectLanguageTest(){
-//        new HomePage(driver).selectLanguage("Deutsch");
-//        new HomePage(driver).clickGoButton();
-//
-//        Assert.assertTrue(new HomePage(driver).takeTextOfGoButton().contains("Ausführen"));
-//
-//        new HomePage(driver).selectLanguage("British English");
-//        new HomePage(driver).clickGoButton();
-//    }
+    @Test
+    public void guestCanSelectLanguageTest(){
+        new HomePage(driver).selectLanguage("Deutsch");
+        new HomePage(driver).clickGoButton();
+
+        Assert.assertTrue(new HomePage(driver).takeTextOfGoButton().contains("Ausführen"));
+
+        new HomePage(driver).selectLanguage("British English");
+        new HomePage(driver).clickGoButton();
+    }
 
 
     @Test
