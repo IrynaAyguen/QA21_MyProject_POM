@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.Collection;
 import java.util.List;
 
+import static java.lang.Double.parseDouble;
+
 public class BasketPage extends PageBase {
 
     public BasketPage(WebDriver driver) {
@@ -52,7 +54,7 @@ public class BasketPage extends PageBase {
     WebElement priceInBasket;
 
     public double getProductPriceInBasketPage() {
-        double pPriceInBasket = Double.parseDouble(priceInBasket.getText().replace("£", ""));
+        double pPriceInBasket = parseDouble(priceInBasket.getText().replace("£", ""));
         return pPriceInBasket;
     }
 
@@ -76,19 +78,19 @@ public class BasketPage extends PageBase {
     public boolean isTotalSumCorrect() {
         double sum = 0;
         for (int i = 1; i <= itemsList.size(); i++) {
-            double totalOfItem = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
+            double totalOfItem = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
                     .getText().replace("£", ""));
             sum = sum + totalOfItem;
 
         }
-        double totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().replace("£", ""));
 
         return (sum == totalOfBasket);
     }
 
     public double getTotalInBasket() {
-        double totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().replace("£", ""));
         return totalOfBasket;
     }
