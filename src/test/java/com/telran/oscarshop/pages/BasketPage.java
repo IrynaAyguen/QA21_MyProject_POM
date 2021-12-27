@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Collection;
 import java.util.List;
 
 import static java.lang.Double.parseDouble;
@@ -76,19 +75,18 @@ public class BasketPage extends PageBase {
 
 
     public boolean isTotalSumCorrect() {
-        //        sum = 0.0;
+//        double sum = 0.0;
 //        for (int i = 1; i <= itemsList.size(); i++) {
 //            double totalOfItem = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
 //                    .getText().replace("£", ""));
 //            sum = sum + totalOfItem;
-//
 //        }
         double sum;
         sum = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
                 .getText().replace("£", "")) +
                 parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
                         .getText().replace("£", ""));
-        
+
         double totalOfBasket;
         totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().replace("£", ""));
