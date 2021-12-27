@@ -38,7 +38,7 @@ public class OrderHistoryTests extends TestBase{
         new ProfilePage(driver).clickOnOrderHistoryLink();
         new OrderHistoryPage(driver).clickOnOrderNummerLink();
         String productNameFromOrder =new OrderPage(driver).getProductNameFromOrder();
-        
+
         Assert.assertEquals(productName,productNameFromOrder);
 
     }
