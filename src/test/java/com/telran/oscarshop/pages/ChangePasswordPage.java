@@ -50,7 +50,7 @@ public class ChangePasswordPage extends PageBase{
     }
 
 
-    @FindBy(css=".btn-primary")
+    @FindBy(css=".btn-lg.btn-primary")
     WebElement saveBtn;
 
     public ProfilePage clickOnSaveButton() {

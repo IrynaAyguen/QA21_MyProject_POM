@@ -68,4 +68,13 @@ public class ProfilePage extends PageBase {
         click(orderHistoryLink);
         return new OrderHistoryPage(driver);
     }
+
+
+    @FindBy(xpath = "//a[@href='/en-gb/accounts/addresses/']")
+    WebElement addressBookLink;
+
+    public AddressBookPage clickOnAddressBookLink() {
+        click(addressBookLink);
+        return new AddressBookPage(driver);
+    }
 }

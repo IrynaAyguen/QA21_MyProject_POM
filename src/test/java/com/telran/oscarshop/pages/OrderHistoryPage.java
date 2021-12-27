@@ -17,4 +17,13 @@ public class OrderHistoryPage extends PageBase{
     public double getTotalInOrderHistory() {
         return Double.parseDouble(totalInOrderHistory.getText().replace("£",""));
     }
+
+
+    @FindBy(css="tbody:nth-child(1) tr:nth-child(2) td:nth-child(1) > a")
+    WebElement orderNummerLink;
+
+    public OrderPage clickOnOrderNummerLink() {
+        click(orderNummerLink);
+        return new OrderPage(driver);
+    }
 }

@@ -8,17 +8,17 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         new HomePage(driver).getLoginRegisterPage();
     }
 
 
     @Test
-    public void LoginPositiveTest(){
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+    public void LoginPositiveTest() {
+        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         Assert.assertTrue(new HomePage(driver).isLogoutLinkPresent());
         new HomePage(driver).clickOnLogoutLink();
     }
@@ -31,22 +31,34 @@ public class LoginTests extends TestBase{
     }
 
 
-
-  ///////////////////
+    ///////////////////
 
     @Test
-    public void verifyMessageByLoginWithIncorrectEmailOrPasswordTest(){
-        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL,"123456789");
+    public void verifyMessageByLoginWithIncorrectPasswordTest() {
+        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL, "123456789");
         Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutIncorrectData()
                 .contains("Please enter a correct username and password"));
     }
 
     @Test
-    public void verifyIsMessagePresentAboutLoginWithEmptyPasswordFieldTest(){
-        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL,"");
+    public void verifyMessageByLoginWithIncorrectEmailTest() {
+        new LoginRegistrationPage(driver).loginNegative("Test66@test66.de", UserData.USER_PASSWORD);
+        Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutIncorrectData()
+                .contains("Please enter a correct username and password"));
+    }
+
+
+    @Test
+    public void verifyIsMessagePresentAboutLoginWithEmptyPasswordFieldTest() {
+        new LoginRegistrationPage(driver).loginNegative(UserData.USER_EMAIL, "");
         Assert.assertTrue(new LoginRegistrationPage(driver).isMessagePresent());
     }
 
 
+    @Test
+    public void verifyIsMessagePresentAboutLoginWithEmptyEmailFieldTest() {
+        new LoginRegistrationPage(driver).loginNegative("", UserData.USER_PASSWORD);
+        Assert.assertTrue(new LoginRegistrationPage(driver).isMessagePresent());
+    }
 
 }

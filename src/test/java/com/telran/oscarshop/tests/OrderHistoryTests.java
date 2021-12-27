@@ -4,29 +4,26 @@ import com.telran.oscarshop.data.ShippingAddress;
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.pages.*;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SmokeTest extends TestBase{
+public class OrderHistoryTests extends TestBase{
 
-    @Test
-    public void userCanOderProductPositiveTest() {
-
+    @BeforeMethod
+    public void ensurePreconditions(){
         new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
         new HomePage(driver).selectBooksCategory();
-        String ProductNameFromList = new ProductPage(driver).getProductNameFromList(1);
         new ProductPage(driver).clickOnAddToBasketFromList(1);
-        String message = new ProductPage(driver).getMessage();
-
-        Assert.assertTrue(message.contains(ProductNameFromList));
-
-        new ProductPage(driver).clickOnAddToBasketFromList(2);
         new ProductPage(driver).clickOnViewBasketButton();
 
-        Assert.assertTrue(new BasketPage(driver).isTwoItemsInBasket());
-        Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
+    }
 
-        double totalInBasket = new BasketPage(driver).getTotalInBasket();
+
+    @Test
+    public void userCanViewOrderHistoryPositiveTest(){
+        String productName= new BasketPage(driver).getProductNameInBasket();
+
         new BasketPage(driver).clickProceedToCheckoutButton();
         new ShippingAddressPage(driver).selectTitle("Mrs");
         new ShippingAddressPage(driver).typeNameAndAddress(ShippingAddress.ADDRESS_FIRSTNAME, ShippingAddress.ADDRESS_LASTNAME,
@@ -36,17 +33,14 @@ public class SmokeTest extends TestBase{
         new PaymentPage(driver).clickContinueBtn();
         new PreviewPage(driver).clickPlaceOrderBtn();
         new ConfirmationPage(driver).clickContinueShoppingBtn();
-        new ProductPage(driver).clickOnViewBasketButton();
-
-        Assert.assertTrue(new BasketPage(driver).verifyTextAboutEmptyBasket().contains("Your basket is empty"));
-
         new HomePage(driver).clickOnAccountLink();
+
         new ProfilePage(driver).clickOnOrderHistoryLink();
-        double totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
+        new OrderHistoryPage(driver).clickOnOrderNummerLink();
+        String productNameFromOrder =new OrderPage(driver).getProductNameFromOrder();
+        
+        Assert.assertEquals(productName,productNameFromOrder);
 
-        Assert.assertEquals(totalInBasket,totalInOrderHistory);
     }
+
 }
-
-
-
