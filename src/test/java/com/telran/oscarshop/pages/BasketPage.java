@@ -95,7 +95,7 @@ public class BasketPage extends PageBase {
     }
 
 
-//    public double getTotalInBasket() {
+    //    public double getTotalInBasket() {
 //        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
 //                .getText().replace("£", ""));
 //        return totalOfBasket;
@@ -104,5 +104,27 @@ public class BasketPage extends PageBase {
         String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText();
         return totalOfBasket;
+    }
+
+
+    @FindBy(css = ".h1 a")
+    WebElement logoLink;
+
+    public HomePage clickOnLogo() {
+        click(logoLink);
+        pause(2000);
+        return new HomePage(driver);
+    }
+
+
+    public BasketPage cleanBasket() {
+        if (itemsList.size() > 0) {
+            for (int i = 0; i < itemsList.size(); i++) {
+                type(quantity,"0");
+                click(updateBtn);
+                pause(2000);
+            }
+        }
+        return this;
     }
 }

@@ -154,4 +154,13 @@ public class HomePage extends PageBase{
         String text= textSumme.getText();
         return text;
     }
+
+
+    @FindBy(xpath = "//a[@class='btn btn-default']")
+    WebElement viewBasketBtn;
+
+    public BasketPage clickOnViewBasket() {
+        click(viewBasketBtn);
+        return new BasketPage(driver);
+    }
 }

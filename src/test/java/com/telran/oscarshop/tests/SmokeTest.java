@@ -21,6 +21,10 @@ public class SmokeTest extends TestBase{
 
         new HomePage(driver).getLoginRegisterPage();
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+        new HomePage(driver).clickOnViewBasket();
+        new BasketPage(driver).cleanBasket();
+        new BasketPage(driver).clickOnLogo();
+
         new HomePage(driver).selectBooksCategory();
         String ProductNameFromList = new ProductPage(driver).getProductNameFromList(1);
         new ProductPage(driver).clickOnAddToBasketFromList(1);
