@@ -4,9 +4,17 @@ import com.telran.oscarshop.data.ShippingAddress;
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.pages.*;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SmokeTest extends TestBase{
+
+    @BeforeMethod
+    public void ensurePreconditions(){
+        if (new HomePage(driver).isLogoutLinkPresent()) {
+            new HomePage(driver).clickOnLogoutLink();
+        }
+    }
 
     @Test
     public void userCanOrderProductPositiveTest() {
