@@ -51,12 +51,14 @@ public class HomePage extends PageBase{
 
     public HomePage clickGoButton() {
         click(goBtn);
+        pause(3000);
         return this;
     }
 
 
     public String takeTextOfGoButton() {
          String text = driver.findElement(By.cssSelector("#language_selector .btn-default")).getText();
+        System.out.println(text);
          return text;
     }
 
@@ -148,4 +150,14 @@ public class HomePage extends PageBase{
         return new ProductPage(driver);
     }
 
+
+    @FindBy(css=".hidden-xs strong")
+    WebElement textSumme;
+
+    public String takeTextSumme() {
+        pause(5000);
+        String text= textSumme.getText();
+        System.out.println("********************"+text);
+        return text;
+    }
 }
