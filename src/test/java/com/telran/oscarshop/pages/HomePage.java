@@ -37,11 +37,8 @@ public class HomePage extends PageBase{
     WebElement languageMenu;
 
     public HomePage selectLanguage(String text) {
-        pause(2000);
         Select select = new Select(languageMenu);
-        pause(2000);
         select.selectByVisibleText(text);
-        pause(2000);
         return this;
     }
 
@@ -51,7 +48,6 @@ public class HomePage extends PageBase{
 
     public HomePage clickGoButton() {
         click(goBtn);
-        pause(3000);
         return this;
     }
 
@@ -155,9 +151,7 @@ public class HomePage extends PageBase{
     WebElement textSumme;
 
     public String takeTextSumme() {
-        pause(5000);
         String text= textSumme.getText();
-        System.out.println("********************"+text);
         return text;
     }
 }

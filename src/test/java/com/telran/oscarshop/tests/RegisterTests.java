@@ -36,12 +36,12 @@ public class RegisterTests extends TestBase{
         new DeleteProfilePage(driver).clickOnDeleteButton();
     }
 
-//
-//    @Test(dataProviderClass = DataProviders.class, dataProvider = "userNegativeRegistrationUsingFileCSV")
-//    public void registrationWithDataProviderNegativeTest(String eMail, String password1, String password2) {
-//        new LoginRegistrationPage(driver).registrationNegative(eMail, password1, password2);
-//        Assert.assertTrue(new LoginRegistrationPage(driver).isLoginOrRegisterLinkPresent());
-//    }
+
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "userNegativeRegistrationUsingFileCSV")
+    public void registrationWithDataProviderNegativeTest(String eMail, String password1, String password2) {
+        new LoginRegistrationPage(driver).registrationNegative(eMail, password1, password2);
+        Assert.assertTrue(new LoginRegistrationPage(driver).isLoginOrRegisterLinkPresent());
+    }
 
 
 
