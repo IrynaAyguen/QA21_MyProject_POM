@@ -75,17 +75,17 @@ public class BasketPage extends PageBase {
 
 
     public boolean isTotalSumCorrect() {
-//        double sum = 0.0;
-//        for (int i = 1; i <= itemsList.size(); i++) {
-//            double totalOfItem = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
-//                    .getText().replace("£", ""));
-//            sum = sum + totalOfItem;
-//        }
-        double sum;
-        sum = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
-                .getText().substring(1)) +
-                Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
-                        .getText().substring(1));
+        double sum = 0.0;
+        for (int i = 1; i <= itemsList.size(); i++) {
+            double totalOfItem = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[" + i + "] /div/div[5]"))
+                    .getText().substring(1));
+            sum = sum + totalOfItem;
+        }
+//        double sum;
+//        sum = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
+//                .getText().substring(1)) +
+//                Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
+//                        .getText().substring(1));
 
         double totalOfBasket;
         totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
@@ -120,20 +120,5 @@ public class BasketPage extends PageBase {
                 pause(2000);
         }
         return this;
-    }
-
-    public String priceOfFirstItem() {
-         return driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
-                .getText().substring(1);
-    }
-    public String priceOfSecondItem() {
-        return driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
-                .getText().substring(1);
-    }
-
-    public String getTotal() {
-        String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
-                .getText().substring(1);
-        return totalOfBasket;
     }
 }
