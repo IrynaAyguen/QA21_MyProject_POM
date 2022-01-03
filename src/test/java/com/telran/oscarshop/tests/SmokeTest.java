@@ -37,11 +37,12 @@ public class SmokeTest extends TestBase{
 
         Assert.assertTrue(new BasketPage(driver).isTwoItemsInBasket());
 
-        try {
-            Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
-        }catch (NumberFormatException numberFormatException){
-            numberFormatException.printStackTrace();
-        }
+//        try {
+//            Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
+//        }catch (NumberFormatException numberFormatException){
+//            numberFormatException.printStackTrace();
+//        }
+        Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
 
         String totalInBasket = new BasketPage(driver).getTotalInBasket();
         new BasketPage(driver).clickProceedToCheckoutButton();

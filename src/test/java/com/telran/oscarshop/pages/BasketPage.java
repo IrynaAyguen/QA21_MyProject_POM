@@ -100,6 +100,7 @@ public class BasketPage extends PageBase {
 //                .getText().replace("£", ""));
 //        return totalOfBasket;
 //    }
+
     public String getTotalInBasket() {
         String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText();
