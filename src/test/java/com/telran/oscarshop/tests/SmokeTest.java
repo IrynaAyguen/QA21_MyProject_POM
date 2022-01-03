@@ -38,22 +38,17 @@ public class SmokeTest extends TestBase{
 
         Assert.assertTrue(new BasketPage(driver).isTwoItemsInBasket());
 
-//        try {
-//            Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
-//        }catch (NumberFormatException numberFormatException){
-//            numberFormatException.printStackTrace();
-//        }
-//       Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
+        Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
 
-        String priceOfFirstItem = new BasketPage(driver).priceOfFirstItem();
-        System.out.println(priceOfFirstItem);
-        double priceOf1Item = Double.parseDouble(priceOfFirstItem);
-        String priceOfSecondItem = new BasketPage(driver).priceOfSecondItem();
-        double priceOf2Item = Double.parseDouble(priceOfSecondItem);
-        double sumD = priceOf1Item + priceOf2Item;
-        String total = new BasketPage(driver).getTotal();
-        double totalD = Double.parseDouble(total);
-        Assert.assertEquals(sumD,totalD);
+//        String priceOfFirstItem = new BasketPage(driver).priceOfFirstItem();
+//        System.out.println(priceOfFirstItem);
+//        double priceOf1Item = Double.parseDouble(priceOfFirstItem);
+//        String priceOfSecondItem = new BasketPage(driver).priceOfSecondItem();
+//        double priceOf2Item = Double.parseDouble(priceOfSecondItem);
+//        double sumD = priceOf1Item + priceOf2Item;
+//        String total = new BasketPage(driver).getTotal();
+//        double totalD = Double.parseDouble(total);
+//        Assert.assertEquals(sumD,totalD);
 
         String totalInBasket = new BasketPage(driver).getTotalInBasket();
         new BasketPage(driver).clickProceedToCheckoutButton();
