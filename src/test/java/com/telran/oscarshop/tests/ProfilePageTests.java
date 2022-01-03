@@ -20,26 +20,6 @@ public class ProfilePageTests extends TestBase {
     }
 
 
-    @Test
-    public void userCanGoToChangePasswordTest() {
-        new ProfilePage(driver).clickOnChangePasswordButton();
-        Assert.assertTrue(new ChangePasswordPage(driver).takeTitleText().contains("Change Password"));
-    }
-
-
-    @Test
-    public void userCanGoToEditProfileTest() {
-        new ProfilePage(driver).clickOnEditProfileButton();
-        Assert.assertTrue(new EditProfilePage(driver).takeTitleText().contains("Edit Profile"));
-    }
-
-
-    @Test
-    public void userCanGoToDeleteProfileTest() {
-        new ProfilePage(driver).clickOnDeleteProfileButton();
-        Assert.assertTrue(new DeleteProfilePage(driver).takeTitleText().contains("Delete profile"));
-    }
-
 
     @Test
     public void userCanChangePasswordTest() {

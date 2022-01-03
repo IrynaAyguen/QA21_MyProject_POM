@@ -112,8 +112,8 @@ public class HomePage extends PageBase {
     WebElement logoLink;
 
     public HomePage clickOnLogo() {
-        click(logoLink);
         pause(2000);
+        click(logoLink);
         return this;
     }
 
