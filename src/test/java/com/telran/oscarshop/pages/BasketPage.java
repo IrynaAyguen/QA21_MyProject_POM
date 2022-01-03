@@ -85,7 +85,7 @@ public class BasketPage extends PageBase {
         double sum;
         sum = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
                 .getText().replace("£", "")) +
-                parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
+                Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
                         .getText().replace("£", ""));
 
         double totalOfBasket;
