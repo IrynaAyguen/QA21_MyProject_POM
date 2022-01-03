@@ -157,7 +157,7 @@ public class ProductPage extends PageBase {
         return pPrice;
     }
 
-    
+
     public ProductPage clickOnAddToBasketFromList(int number) {
         driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") form")).click();
         return this;
