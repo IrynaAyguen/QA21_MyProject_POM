@@ -70,7 +70,6 @@ public class BasketPage extends PageBase {
     List<WebElement> itemsList;
 
     public boolean isTwoItemsInBasket() {
-        System.out.println("***********"+itemsList.size());
         return (itemsList.size() == 2);
     }
 
@@ -132,16 +131,16 @@ public class BasketPage extends PageBase {
 
     public String priceOfFirstItem() {
          return driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
-                .getText().replace("£", "");
+                .getText().substring(1);
     }
     public String priceOfSecondItem() {
         return driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
-                .getText().replace("£", "");
+                .getText().substring(1);
     }
 
     public String getTotal() {
         String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
-                .getText().replace("£", "");
+                .getText().substring(1);
         return totalOfBasket;
     }
 }

@@ -6,6 +6,7 @@ import com.telran.oscarshop.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import static java.lang.Double.parseDouble;
 
 public class SmokeTest extends TestBase{
 
@@ -52,7 +53,7 @@ public class SmokeTest extends TestBase{
         String total = new BasketPage(driver).getTotal();
         double totalD = Double.parseDouble(total);
         Assert.assertEquals(sumD,totalD);
-        
+
         String totalInBasket = new BasketPage(driver).getTotalInBasket();
         new BasketPage(driver).clickProceedToCheckoutButton();
         new ShippingAddressPage(driver).selectTitle("Mrs");
