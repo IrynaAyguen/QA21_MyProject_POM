@@ -127,7 +127,7 @@ public class HomePageTests extends TestBase {
         new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         new HomePage(driver).clickOnAccountLink();
         Assert.assertTrue(new ProfilePage(driver).verifyTitleOfPage().contains("Profile"));
-        Assert.assertEquals(new ProfilePage(driver).getEmailOfUserFromProfilePge(), UserData.USER_EMAIL);
+        Assert.assertEquals(new ProfilePage(driver).getEmailOfUserFromProfilePage(), UserData.USER_EMAIL);
     }
 
 

@@ -27,6 +27,8 @@ public class HomePage extends PageBase {
     WebElement submenuBook;
 
     public ProductPage selectBooksCategory() {
+
+        pause(2000);
         click(submenuBook);
         return new ProductPage(driver);
     }
@@ -95,6 +97,7 @@ public class HomePage extends PageBase {
     WebElement accountLink;
 
     public ProfilePage clickOnAccountLink() {
+        pause(2000);
         click(accountLink);
         return new ProfilePage(driver);
     }

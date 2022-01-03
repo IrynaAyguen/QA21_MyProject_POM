@@ -19,7 +19,8 @@ public class ProfilePage extends PageBase {
     }
 
 
-    public String getEmailOfUserFromProfilePge() {
+    public String getEmailOfUserFromProfilePage() {
+        pause(2000);
         String eMail = driver.findElement(By.xpath("//tbody /tr[2]/td")).getText();
         return eMail;
     }
@@ -38,6 +39,7 @@ public class ProfilePage extends PageBase {
     WebElement editProfileBtn;
 
     public EditProfilePage clickOnEditProfileButton() {
+        pause(2000);
         click(editProfileBtn);
         return new EditProfilePage(driver);
     }
@@ -47,6 +49,7 @@ public class ProfilePage extends PageBase {
     WebElement deleteProfileBtn;
 
     public DeleteProfilePage clickOnDeleteProfileButton() {
+        pause(2000);
         click(deleteProfileBtn);
         return new DeleteProfilePage(driver);
     }
@@ -64,6 +67,7 @@ public class ProfilePage extends PageBase {
     WebElement orderHistoryLink;
 
     public OrderHistoryPage clickOnOrderHistoryLink() {
+        pause(2000);
         click(orderHistoryLink);
         return new OrderHistoryPage(driver);
     }
@@ -73,6 +77,7 @@ public class ProfilePage extends PageBase {
     WebElement addressBookLink;
 
     public AddressBookPage clickOnAddressBookLink() {
+        pause(2000);
         click(addressBookLink);
         return new AddressBookPage(driver);
     }
