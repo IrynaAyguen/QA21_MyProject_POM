@@ -70,6 +70,7 @@ public class BasketPage extends PageBase {
     List<WebElement> itemsList;
 
     public boolean isTwoItemsInBasket() {
+        System.out.println("***********"+itemsList.size());
         return (itemsList.size() == 2);
     }
 
@@ -90,7 +91,8 @@ public class BasketPage extends PageBase {
         double totalOfBasket;
         totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().replace("£", ""));
-
+        System.out.println(sum);
+        System.out.println(totalOfBasket);
         return (sum == totalOfBasket);
     }
 
@@ -119,12 +121,18 @@ public class BasketPage extends PageBase {
 
 
     public BasketPage cleanBasket() {
-        if (itemsList.size() > 0) {
-            for (int i = 0; i < itemsList.size(); i++) {
-                type(quantity,"0");
+//        if (itemsList.size() > 0) {
+//            for (int i = 0; i < itemsList.size(); i++) {
+//                type(quantity,"0");
+//                click(updateBtn);
+//                pause(2000);
+//            }
+//        }
+
+        while(isElementPresent(By.cssSelector(".basket-items"))){
+            type(quantity,"0");
                 click(updateBtn);
                 pause(2000);
-            }
         }
         return this;
     }
