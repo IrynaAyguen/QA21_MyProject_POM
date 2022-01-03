@@ -83,17 +83,17 @@ public class BasketPage extends PageBase {
 //            sum = sum + totalOfItem;
 //        }
         double sum;
-        sum = parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
+        sum = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
                 .getText().replace("£", "")) +
                 parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
                         .getText().replace("£", ""));
 
         double totalOfBasket;
-        totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
+        totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().replace("£", ""));
         System.out.println(sum);
         System.out.println(totalOfBasket);
-        
+
         if (sum == totalOfBasket) {
             return true;
         }else {
@@ -128,5 +128,14 @@ public class BasketPage extends PageBase {
                 pause(2000);
         }
         return this;
+    }
+
+    public String priceOfFirstItem() {
+         return driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
+                .getText().replace("£", "");
+    }
+    public String priceOfSecondItem() {
+        return driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
+                .getText().replace("£", "");
     }
 }
