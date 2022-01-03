@@ -93,15 +93,16 @@ public class BasketPage extends PageBase {
                 .getText().replace("£", ""));
         System.out.println(sum);
         System.out.println(totalOfBasket);
-        return (sum == totalOfBasket);
+        
+        if (sum == totalOfBasket) {
+            return true;
+        }else {
+            return false;
+        }
+        //return (sum == totalOfBasket);
     }
 
 
-    //    public double getTotalInBasket() {
-//        double totalOfBasket = parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
-//                .getText().replace("£", ""));
-//        return totalOfBasket;
-//    }
 
     public String getTotalInBasket() {
         String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
@@ -121,14 +122,6 @@ public class BasketPage extends PageBase {
 
 
     public BasketPage cleanBasket() {
-//        if (itemsList.size() > 0) {
-//            for (int i = 0; i < itemsList.size(); i++) {
-//                type(quantity,"0");
-//                click(updateBtn);
-//                pause(2000);
-//            }
-//        }
-
         while(isElementPresent(By.cssSelector(".basket-items"))){
             type(quantity,"0");
                 click(updateBtn);
