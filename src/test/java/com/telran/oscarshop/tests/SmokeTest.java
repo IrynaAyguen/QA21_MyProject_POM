@@ -46,6 +46,7 @@ public class SmokeTest extends TestBase{
 //       Assert.assertTrue(new BasketPage(driver).isTotalSumCorrect());
 
         String priceOfFirstItem = new BasketPage(driver).priceOfFirstItem();
+        System.out.println(priceOfFirstItem);
         double priceOf1Item = Double.parseDouble(priceOfFirstItem);
         String priceOfSecondItem = new BasketPage(driver).priceOfSecondItem();
         double priceOf2Item = Double.parseDouble(priceOfSecondItem);
