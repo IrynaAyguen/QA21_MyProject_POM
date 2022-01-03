@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class LoginRegistrationPage extends PageBase {
 
     public LoginRegistrationPage(WebDriver driver) {
@@ -23,7 +24,7 @@ public class LoginRegistrationPage extends PageBase {
     @FindBy(css = "[name=registration_submit]")
     WebElement registrationBtn;
 
-    public HomePage registrationAndLogin(String regEmail, String psw1, String psw2){
+    public HomePage registrationAndLogin(String regEmail, String psw1, String psw2) {
         type(registrationEmail, regEmail);
         type(registrationPassword1, psw1);
         type(registrationPassword2, psw2);
@@ -32,7 +33,7 @@ public class LoginRegistrationPage extends PageBase {
         return new HomePage(driver);
     }
 
-    public LoginRegistrationPage registrationNegative(String regEmail, String psw1, String psw2){
+    public LoginRegistrationPage registrationNegative(String regEmail, String psw1, String psw2) {
         type(registrationEmail, regEmail);
         type(registrationPassword1, psw1);
         type(registrationPassword2, psw2);

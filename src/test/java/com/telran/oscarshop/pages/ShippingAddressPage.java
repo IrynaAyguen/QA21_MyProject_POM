@@ -11,7 +11,7 @@ public class ShippingAddressPage extends PageBase {
         super(driver);
     }
 
-    @FindBy(id="id_title")
+    @FindBy(id = "id_title")
     WebElement titleMenu;
 
     public ShippingAddressPage selectTitle(String text) {
@@ -20,15 +20,15 @@ public class ShippingAddressPage extends PageBase {
         return this;
     }
 
-    @FindBy(id="id_first_name")
+    @FindBy(id = "id_first_name")
     WebElement addressFName;
-    @FindBy(id="id_last_name")
+    @FindBy(id = "id_last_name")
     WebElement addressLName;
-    @FindBy(id="id_line1")
+    @FindBy(id = "id_line1")
     WebElement addressFLine;
-    @FindBy(id="id_line4")
+    @FindBy(id = "id_line4")
     WebElement addressCityLine;
-    @FindBy(id="id_postcode")
+    @FindBy(id = "id_postcode")
     WebElement addressPostZipCode;
 
     public ShippingAddressPage typeNameAndAddress(String addressFirstname, String addressLastname, String addressFirstline,
@@ -43,7 +43,7 @@ public class ShippingAddressPage extends PageBase {
     }
 
 
-    @FindBy(id="id_country")
+    @FindBy(id = "id_country")
     WebElement countryMenu;
 
     public ShippingAddressPage selectCountry(String text) {
@@ -54,7 +54,7 @@ public class ShippingAddressPage extends PageBase {
     }
 
 
-    @FindBy(css=".btn-primary")
+    @FindBy(css = ".btn-primary")
     WebElement continueBtn;
 
     public PaymentPage clickContinueBtn() {

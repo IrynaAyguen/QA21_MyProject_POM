@@ -21,60 +21,60 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-   //WebDriver driver;
-   public static EventFiringWebDriver driver;
+    //WebDriver driver;
+    public static EventFiringWebDriver driver;
 
-   Logger logger = LoggerFactory.getLogger(TestBase.class);
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-   public static String baseURL = PropertiesLoader.loadProperty("url");  //  from PropertiesLoader
+    public static String baseURL = PropertiesLoader.loadProperty("url");  //  from PropertiesLoader
 
-   @BeforeSuite
-   public void setUp(){
+    @BeforeSuite
+    public void setUp() {
 
-      //        //browser in background mode//
+       //browser in background mode//
 //        //driver= commentiruem
 //        ChromeOptions options = new ChromeOptions() ;
 //        options.addArguments("headless");
 //        //max commentiruem
 //        options.addArguments("windows-size=1200x800");
 //        driver = new ChromeDriver(options);
-//        //
+//     //
 
-      //driver = new ChromeDriver();
-      driver = new EventFiringWebDriver(new ChromeDriver());
-      driver.manage().window().maximize();
-      //driver.manage().window().setSize(new Dimension(1920,1000));/// not maximize
+        //driver = new ChromeDriver();
+        driver = new EventFiringWebDriver(new ChromeDriver());
+        driver.manage().window().maximize();
+        //driver.manage().window().setSize(new Dimension(1920,1000));/// not maximize
 
-      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-      //driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
-      driver.get(baseURL);                  //  from PropertiesLoader
-      new HomePage(driver).selectLanguage("British English");
-      new HomePage(driver).clickGoButton();
+        //driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
+        driver.get(baseURL);                  //  from PropertiesLoader
+        new HomePage(driver).selectLanguage("British English");
+        new HomePage(driver).clickGoButton();
 
-      driver.register(new MyListener());
-   }
+        driver.register(new MyListener());
+    }
 
-   @AfterSuite(enabled = false)
-   public void  tearDown(){
-      driver.quit();
-   }
+    @AfterSuite(enabled = false)
+    public void tearDown() {
+        driver.quit();
+    }
 
-   @BeforeMethod
-   public void startTest(Method m, Object[] p) {
-      logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
-   }
+    @BeforeMethod
+    public void startTest(Method m, Object[] p) {
+        logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
+    }
 
-   @AfterMethod
-   public void stopTest(ITestResult result) {
-      if(result.isSuccess()){
-         logger.info("PASSED: test method " + result.getMethod().getMethodName());
-      }else{
-         logger.error("FAILED: test method " + result.getMethod().getMethodName());
+    @AfterMethod
+    public void stopTest(ITestResult result) {
+        if (result.isSuccess()) {
+            logger.info("PASSED: test method " + result.getMethod().getMethodName());
+        } else {
+            logger.error("FAILED: test method " + result.getMethod().getMethodName());
 
-         new PageBase(driver).takeScreenshot();
-      }
-      logger.info("==========================");
-   }
+            new PageBase(driver).takeScreenshot();
+        }
+        logger.info("==========================");
+    }
 
 }

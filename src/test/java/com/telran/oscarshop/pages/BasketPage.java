@@ -7,13 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static java.lang.Double.parseDouble;
-
 public class BasketPage extends PageBase {
 
     public BasketPage(WebDriver driver) {
         super(driver);
     }
+
 
     @FindBy(id = "id_form-0-quantity")
     WebElement quantity;
@@ -25,10 +24,12 @@ public class BasketPage extends PageBase {
         return this;
     }
 
+
     public BasketPage clickUpdate() {
         click(updateBtn);
         return this;
     }
+
 
     @FindBy(css = ".btn-block")
     WebElement proceedToCheckoutBtn;
@@ -38,10 +39,12 @@ public class BasketPage extends PageBase {
         return new ShippingAddressPage(driver);
     }
 
+
     public String verifyTextAboutEmptyBasket() {
         String text = driver.findElement(By.id("content_inner")).getText();
         return text;
     }
+
 
     public String getTitleOfBasketPage() {
         String text = driver.findElement(By.cssSelector(".action h1")).getText();
@@ -81,19 +84,12 @@ public class BasketPage extends PageBase {
                     .getText().substring(1));
             sum = sum + totalOfItem;
         }
-//        double sum;
-//        sum = Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[1] /div/div[5]"))
-//                .getText().substring(1)) +
-//                Double.parseDouble(driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
-//                        .getText().substring(1));
-
         double totalOfBasket;
         totalOfBasket = Double.parseDouble(driver.findElement(By.cssSelector(".align-right .price_color"))
                 .getText().substring(1));
 
         return (sum == totalOfBasket);
     }
-
 
 
     public String getTotalInBasket() {
@@ -114,10 +110,10 @@ public class BasketPage extends PageBase {
 
 
     public BasketPage cleanBasket() {
-        while(isElementPresent(By.cssSelector(".basket-items"))){
-            type(quantity,"0");
-                click(updateBtn);
-                pause(2000);
+        while (isElementPresent(By.cssSelector(".basket-items"))) {
+            type(quantity, "0");
+            click(updateBtn);
+            pause(2000);
         }
         return this;
     }

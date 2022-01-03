@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+
 public class ProductPage extends PageBase {
 
     public ProductPage(WebDriver driver) {
@@ -15,13 +16,13 @@ public class ProductPage extends PageBase {
     }
 
 
-    @FindBy(id = "id_q")
-    WebElement searchFieldInput;
-
-    public ProductPage typeInSearchFieldInput(String productName) {
-        type(searchFieldInput, productName);
-        return this;
-    }
+//    @FindBy(id = "id_q")
+//    WebElement searchFieldInput;
+//
+//    public ProductPage typeInSearchFieldInput(String productName) {
+//        type(searchFieldInput, productName);
+//        return this;
+//    }
 
 
     public String takeNameOfProduct() {
@@ -42,11 +43,11 @@ public class ProductPage extends PageBase {
         return text;
     }
 
-    public String verifyNumberOfResults() {
-        String text = driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[1]")).getText();
-        System.out.println(text);
-        return text;
-    }
+//    public String verifyNumberOfResults() {
+//        String text = driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[1]")).getText();
+//        System.out.println(text);
+//        return text;
+//    }
 
 
     @FindBy(css = ".col-xs-6.col-sm-4.col-md-3.col-lg-3")
@@ -78,13 +79,13 @@ public class ProductPage extends PageBase {
         return this;
     }
 
-    public boolean isNewBasketTotalCorrect() {
-        String pP = driver.findElement(By.cssSelector(".product_price .price_color")).getText();
-        String nBasketTotal = newBasketTotal.getText();
-        System.out.println("pp"+pP+"pp");
-        System.out.println("total"+nBasketTotal+"total");
-        return (pP == nBasketTotal);
-    }
+//    public boolean isNewBasketTotalCorrect() {
+//        String pP = driver.findElement(By.cssSelector(".product_price .price_color")).getText();
+//        String nBasketTotal = newBasketTotal.getText();
+//        System.out.println("pp"+pP+"pp");
+//        System.out.println("total"+nBasketTotal+"total");
+//        return (pP == nBasketTotal);
+//    }
 
 
     @FindBy(xpath = "//span[@class='btn-group']")
@@ -98,25 +99,11 @@ public class ProductPage extends PageBase {
     @FindBy(css = "#language_selector .form-control")
     WebElement languageMenu;
 
-    public ProductPage selectLanguage(String text) {
-        Select select = new Select(languageMenu);
-        select.selectByVisibleText(text);
-        return this;
-    }
-
-    @FindBy(css = "#language_selector .btn-default")
-    WebElement goBtn;
-
-    public ProductPage clickGoButton() {
-        click(goBtn);
-        return this;
-    }
-
-
-    public String takeTextGoButton() {
-        String text = driver.findElement(By.cssSelector("#language_selector .btn-default")).getText();
-        return text;
-    }
+//    public ProductPage selectLanguage(String text) {
+//        Select select = new Select(languageMenu);
+//        select.selectByVisibleText(text);
+//        return this;
+//    }
 
 
     @FindBy(css = ".page-header.action")
@@ -202,7 +189,6 @@ public class ProductPage extends PageBase {
     }
 
     public ProductPage clickOnAddToBasketFromList(int number) {
-        //driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a")).click();
         driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") form")).click();
         return this;
     }

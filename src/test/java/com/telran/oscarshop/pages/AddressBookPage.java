@@ -4,16 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Collection;
-
-public class AddressBookPage extends PageBase{
+public class AddressBookPage extends PageBase {
 
     public AddressBookPage(WebDriver driver) {
         super(driver);
     }
 
 
-    @FindBy(css="h1")
+    @FindBy(css = "h1")
     WebElement titleOfAddressBookPage;
 
     public String getPageTitle() {
@@ -29,7 +27,8 @@ public class AddressBookPage extends PageBase{
         return new EditAddressPage(driver);
     }
 
-    @FindBy(css=".wicon")
+
+    @FindBy(css = ".wicon")
     WebElement messageAboutUpdate;
 
     public String getMessageAboutUpdate() {

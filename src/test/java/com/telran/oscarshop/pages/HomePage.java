@@ -6,16 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.Collection;
 
-public class HomePage extends PageBase{
+public class HomePage extends PageBase {
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
 
-    @FindBy(id="login_link")
+    @FindBy(id = "login_link")
     WebElement LoginRegisterLink;
 
     public LoginRegistrationPage getLoginRegisterPage() {
@@ -24,7 +23,7 @@ public class HomePage extends PageBase{
     }
 
 
-    @FindBy(css=".dropdown-submenu")
+    @FindBy(css = ".dropdown-submenu")
     WebElement submenuBook;
 
     public ProductPage selectBooksCategory() {
@@ -53,9 +52,9 @@ public class HomePage extends PageBase{
 
 
     public String takeTextOfGoButton() {
-         String text = driver.findElement(By.cssSelector("#language_selector .btn-default")).getText();
+        String text = driver.findElement(By.cssSelector("#language_selector .btn-default")).getText();
         System.out.println(text);
-         return text;
+        return text;
     }
 
 
@@ -127,8 +126,8 @@ public class HomePage extends PageBase{
         click(allProductsMenuItem);
         return new ProductPage(driver);
     }
-    
-    
+
+
     @FindBy(xpath = "//a[@href='/en-gb/catalogue/category/clothing_1/']")
     WebElement clothingMenuItem;
 
@@ -147,11 +146,11 @@ public class HomePage extends PageBase{
     }
 
 
-    @FindBy(css=".hidden-xs strong")
+    @FindBy(css = ".hidden-xs strong")
     WebElement textSumme;
 
     public String takeTextSumme() {
-        String text= textSumme.getText();
+        String text = textSumme.getText();
         return text;
     }
 

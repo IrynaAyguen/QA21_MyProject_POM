@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class OrderHistoryPage extends PageBase{
+
+public class OrderHistoryPage extends PageBase {
 
     public OrderHistoryPage(WebDriver driver) {
         super(driver);
@@ -14,15 +15,12 @@ public class OrderHistoryPage extends PageBase{
     @FindBy(xpath = "//tbody/ tr[2] /td[3]")
     WebElement totalInOrderHistory;
 
-//    public double getTotalInOrderHistory() {
-//        return Double.parseDouble(totalInOrderHistory.getText().replace("£",""));
-//    }
-
     public String getTotalInOrderHistory() {
         return totalInOrderHistory.getText();
     }
 
-    @FindBy(css="tbody:nth-child(1) tr:nth-child(2) td:nth-child(1) > a")
+
+    @FindBy(css = "tbody:nth-child(1) tr:nth-child(2) td:nth-child(1) > a")
     WebElement orderNummerLink;
 
     public OrderPage clickOnOrderNummerLink() {

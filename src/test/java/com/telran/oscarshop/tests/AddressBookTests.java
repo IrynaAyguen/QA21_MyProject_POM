@@ -1,6 +1,5 @@
 package com.telran.oscarshop.tests;
 
-import com.telran.oscarshop.data.ProductData;
 import com.telran.oscarshop.data.ShippingAddress;
 import com.telran.oscarshop.data.UserData;
 import com.telran.oscarshop.pages.*;
@@ -8,15 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AddressBookTests extends TestBase{
+public class AddressBookTests extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
         new HomePage(driver).getLoginRegisterPage();
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         new HomePage(driver).selectBooksCategory();
         new ProductPage(driver).clickOnAddToBasketFromList(1);
         new ProductPage(driver).clickOnViewBasketButton();
@@ -34,7 +33,7 @@ public class AddressBookTests extends TestBase{
 
 
     @Test
-    public void userCanEditAddressPositiveTest(){
+    public void userCanEditAddressPositiveTest() {
         new ProfilePage(driver).clickOnAddressBookLink();
 
         Assert.assertTrue(new AddressBookPage(driver).getPageTitle().contains("Address Book"));

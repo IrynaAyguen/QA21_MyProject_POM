@@ -5,16 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Collection;
 
-public class DeleteProfilePage extends PageBase{
+public class DeleteProfilePage extends PageBase {
 
     public DeleteProfilePage(WebDriver driver) {
         super(driver);
     }
 
 
-    @FindBy(css="h1")
+    @FindBy(css = "h1")
     WebElement DeleteProfileTitle;
 
     public String takeTitleText() {
@@ -22,7 +21,7 @@ public class DeleteProfilePage extends PageBase{
     }
 
 
-    @FindBy(id="id_password")
+    @FindBy(id = "id_password")
     WebElement passwordField;
 
     public DeleteProfilePage typePasswordField() {
@@ -30,7 +29,8 @@ public class DeleteProfilePage extends PageBase{
         return this;
     }
 
-    @FindBy(css=".btn-danger")
+
+    @FindBy(css = ".btn-danger")
     WebElement deleteBtn;
 
     public HomePage clickOnDeleteButton() {

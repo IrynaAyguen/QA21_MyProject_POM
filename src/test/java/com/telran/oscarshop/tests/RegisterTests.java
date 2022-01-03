@@ -11,13 +11,13 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RegisterTests extends TestBase{
+public class RegisterTests extends TestBase {
 
-    public  static String email = PropertiesLoader.loadProperty("valid.email");
-    public  static String password = PropertiesLoader.loadProperty("valid.password");
+    public static String email = PropertiesLoader.loadProperty("valid.email");
+    public static String password = PropertiesLoader.loadProperty("valid.password");
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
@@ -26,8 +26,8 @@ public class RegisterTests extends TestBase{
 
 
     @Test(enabled = false)
-    public void registrationAndLoginPositiveTest(){
-        new LoginRegistrationPage(driver).registrationAndLogin(email,password, password);
+    public void registrationAndLoginPositiveTest() {
+        new LoginRegistrationPage(driver).registrationAndLogin(email, password, password);
         Assert.assertTrue(new HomePage(driver).isLogoutLinkPresent());
 
         new HomePage(driver).clickOnAccountLink();
@@ -44,31 +44,26 @@ public class RegisterTests extends TestBase{
     }
 
 
-
     /////////////////////////////////
 
     @Test
-    public void verifyMessageByRegistrationOfExistingUserTest(){
-        new LoginRegistrationPage(driver).registrationNegative(UserData.USER_EMAIL,UserData.USER_PASSWORD1, UserData.USER_PASSWORD);
+    public void verifyMessageByRegistrationOfExistingUserTest() {
+        new LoginRegistrationPage(driver).registrationNegative(UserData.USER_EMAIL, UserData.USER_PASSWORD1, UserData.USER_PASSWORD);
         Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutExistingUser()
                 .contains("already exists"));
     }
 
     @Test
-    public void verifyMessageByRegistrationWithShortPasswordTest(){
-        new LoginRegistrationPage(driver).registrationNegative("test8@test8.de","456", "456");
+    public void verifyMessageByRegistrationWithShortPasswordTest() {
+        new LoginRegistrationPage(driver).registrationNegative("test8@test8.de", "456", "456");
         Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutShortPassword()
                 .contains("at least 9 characters"));
     }
 
     @Test
-    public void verifyMessageByRegistrationWithNotMatchingPasswordsTest(){
-        new LoginRegistrationPage(driver).registrationNegative("test20@test20.de","Test20123!", "Test20123!!!!!");
+    public void verifyMessageByRegistrationWithNotMatchingPasswordsTest() {
+        new LoginRegistrationPage(driver).registrationNegative("test20@test20.de", "Test20123!", "Test20123!!!!!");
         Assert.assertTrue(new LoginRegistrationPage(driver).getMessageAboutNotMatchingPasswords()
                 .contains("two password fields didn't match"));
     }
-
-
-
-
 }

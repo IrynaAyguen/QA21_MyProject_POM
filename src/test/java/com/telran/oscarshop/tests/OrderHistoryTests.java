@@ -7,15 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class OrderHistoryTests extends TestBase{
+public class OrderHistoryTests extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
         new HomePage(driver).getLoginRegisterPage();
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         new HomePage(driver).selectBooksCategory();
         new ProductPage(driver).clickOnAddToBasketFromList(1);
         new ProductPage(driver).clickOnViewBasketButton();
@@ -24,8 +24,8 @@ public class OrderHistoryTests extends TestBase{
 
 
     @Test
-    public void userCanViewOrderHistoryPositiveTest(){
-        String productName= new BasketPage(driver).getProductNameInBasket();
+    public void userCanViewOrderHistoryPositiveTest() {
+        String productName = new BasketPage(driver).getProductNameInBasket();
 
         new BasketPage(driver).clickProceedToCheckoutButton();
         new ShippingAddressPage(driver).selectTitle("Mrs");
@@ -40,9 +40,9 @@ public class OrderHistoryTests extends TestBase{
 
         new ProfilePage(driver).clickOnOrderHistoryLink();
         new OrderHistoryPage(driver).clickOnOrderNummerLink();
-        String productNameFromOrder =new OrderPage(driver).getProductNameFromOrder();
+        String productNameFromOrder = new OrderPage(driver).getProductNameFromOrder();
 
-        Assert.assertEquals(productName,productNameFromOrder);
+        Assert.assertEquals(productName, productNameFromOrder);
 
     }
 

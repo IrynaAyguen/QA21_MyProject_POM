@@ -7,42 +7,42 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ProfilePageTests extends TestBase{
+public class ProfilePageTests extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
         new HomePage(driver).getLoginRegisterPage();
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         new HomePage(driver).clickOnAccountLink();
     }
 
 
     @Test
-    public void userCanGoToChangePasswordPageTest(){
+    public void userCanGoToChangePasswordPageTest() {
         new ProfilePage(driver).clickOnChangePasswordButton();
         Assert.assertTrue(new ChangePasswordPage(driver).takeTitleText().contains("Change Password"));
     }
 
 
     @Test
-    public void userCanGoToEditProfilePageTest(){
+    public void userCanGoToEditProfilePageTest() {
         new ProfilePage(driver).clickOnEditProfileButton();
         Assert.assertTrue(new EditProfilePage(driver).takeTitleText().contains("Edit Profile"));
     }
 
 
     @Test
-    public void userCanGoToDeleteProfilePageTest(){
+    public void userCanGoToDeleteProfilePageTest() {
         new ProfilePage(driver).clickOnDeleteProfileButton();
         Assert.assertTrue(new DeleteProfilePage(driver).takeTitleText().contains("Delete profile"));
     }
 
 
     @Test
-    public void userCanChangePasswordTest(){
+    public void userCanChangePasswordTest() {
         new ProfilePage(driver).clickOnChangePasswordButton();
         new ChangePasswordPage(driver).typeOldPasswordField();
         new ChangePasswordPage(driver).typeNewPasswordField();
@@ -50,6 +50,7 @@ public class ProfilePageTests extends TestBase{
         new ChangePasswordPage(driver).clickOnSaveButton();
 
         Assert.assertTrue(new ProfilePage(driver).takeMessageText().contains("Password updated"));
+
         //Return old password
         new ProfilePage(driver).clickOnChangePasswordButton();
         new ChangePasswordPage(driver).typeOldPasswordFieldForReturn();
@@ -60,7 +61,7 @@ public class ProfilePageTests extends TestBase{
 
 
     @Test
-    public void userCanEditProfileTest(){
+    public void userCanEditProfileTest() {
         String oldName = driver.findElement(By.xpath("//tbody /tr[1]/td")).getText();
         System.out.println("oldName: " + oldName);
         new ProfilePage(driver).clickOnEditProfileButton();
@@ -72,16 +73,15 @@ public class ProfilePageTests extends TestBase{
         System.out.println("newName: " + newName);
         String newEmail = driver.findElement(By.xpath("//tbody /tr[2]/td")).getText();
         System.out.println("newEmai: " + newEmail);
+
         Assert.assertTrue(new ProfilePage(driver).takeMessageText().contains("Profile updated"));
-        Assert.assertNotEquals(oldName,newName);
+        Assert.assertNotEquals(oldName, newName);
 
         //Return old email
-
         new ProfilePage(driver).clickOnEditProfileButton();
         new EditProfilePage(driver).typeEmailFieldForReturn();
         new EditProfilePage(driver).clickOnSaveButton();
     }
-
 
 
     @Test
@@ -99,6 +99,6 @@ public class ProfilePageTests extends TestBase{
 
         //Return account
         new HomePage(driver).getLoginRegisterPage();
-        new LoginRegistrationPage(driver).registrationAndLogin(UserData.USER_EMAIL,UserData.USER_PASSWORD1, UserData.USER_PASSWORD);
+        new LoginRegistrationPage(driver).registrationAndLogin(UserData.USER_EMAIL, UserData.USER_PASSWORD1, UserData.USER_PASSWORD);
     }
 }
