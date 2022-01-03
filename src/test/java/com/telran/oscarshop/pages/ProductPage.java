@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -14,15 +13,6 @@ public class ProductPage extends PageBase {
     public ProductPage(WebDriver driver) {
         super(driver);
     }
-
-
-//    @FindBy(id = "id_q")
-//    WebElement searchFieldInput;
-//
-//    public ProductPage typeInSearchFieldInput(String productName) {
-//        type(searchFieldInput, productName);
-//        return this;
-//    }
 
 
     public String takeNameOfProduct() {
@@ -43,11 +33,6 @@ public class ProductPage extends PageBase {
         return text;
     }
 
-//    public String verifyNumberOfResults() {
-//        String text = driver.findElement(By.xpath("//form[@class='form-horizontal'] // strong[1]")).getText();
-//        System.out.println(text);
-//        return text;
-//    }
 
 
     @FindBy(css = ".col-xs-6.col-sm-4.col-md-3.col-lg-3")
@@ -71,21 +56,11 @@ public class ProductPage extends PageBase {
     @FindBy(css = ".btn.btn-primary.btn-block")
     WebElement addToBasketBtnFromList;
 
-    @FindBy(xpath = "//div[@class='alertinner '] / p / strong[1]")
-    WebElement newBasketTotal;
-
     public ProductPage clickAddToBasketButtonFromList() {
         click(addToBasketBtnFromList);
         return this;
     }
 
-//    public boolean isNewBasketTotalCorrect() {
-//        String pP = driver.findElement(By.cssSelector(".product_price .price_color")).getText();
-//        String nBasketTotal = newBasketTotal.getText();
-//        System.out.println("pp"+pP+"pp");
-//        System.out.println("total"+nBasketTotal+"total");
-//        return (pP == nBasketTotal);
-//    }
 
 
     @FindBy(xpath = "//span[@class='btn-group']")
@@ -96,14 +71,6 @@ public class ProductPage extends PageBase {
         return new BasketPage(driver);
     }
 
-    @FindBy(css = "#language_selector .form-control")
-    WebElement languageMenu;
-
-//    public ProductPage selectLanguage(String text) {
-//        Select select = new Select(languageMenu);
-//        select.selectByVisibleText(text);
-//        return this;
-//    }
 
 
     @FindBy(css = ".page-header.action")
@@ -112,6 +79,7 @@ public class ProductPage extends PageBase {
     public boolean isItProductPage() {
         return pageTitle.isDisplayed();
     }
+
 
     public String verifyTitleBooks() {
         String text = driver.findElement(By.cssSelector(".page-header.action")).getText();
@@ -126,6 +94,7 @@ public class ProductPage extends PageBase {
         fictionCatalogue.click();
         return this;
     }
+
 
     @FindBy(xpath = "//li[2]//ul//li[2]//a[@href='/en-gb/catalogue/category/books/non-fiction_5/']")
     WebElement nonFictionCatalogue;
@@ -188,6 +157,7 @@ public class ProductPage extends PageBase {
         return pPrice;
     }
 
+    
     public ProductPage clickOnAddToBasketFromList(int number) {
         driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") form")).click();
         return this;

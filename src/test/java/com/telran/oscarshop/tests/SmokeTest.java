@@ -6,12 +6,11 @@ import com.telran.oscarshop.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static java.lang.Double.parseDouble;
 
-public class SmokeTest extends TestBase{
+public class SmokeTest extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         if (new HomePage(driver).isLogoutLinkPresent()) {
             new HomePage(driver).clickOnLogoutLink();
         }
@@ -21,7 +20,7 @@ public class SmokeTest extends TestBase{
     public void userCanOrderProductPositiveTest() {
 
         new HomePage(driver).getLoginRegisterPage();
-        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL,UserData.USER_PASSWORD);
+        new LoginRegistrationPage(driver).login(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         new HomePage(driver).clickOnViewBasket();
         new BasketPage(driver).cleanBasket();
         new BasketPage(driver).clickOnLogo();
@@ -58,7 +57,7 @@ public class SmokeTest extends TestBase{
         new ProfilePage(driver).clickOnOrderHistoryLink();
 
         String totalInOrderHistory = new OrderHistoryPage(driver).getTotalInOrderHistory();
-        Assert.assertEquals(totalInBasket,totalInOrderHistory);
+        Assert.assertEquals(totalInBasket, totalInOrderHistory);
     }
 }
 

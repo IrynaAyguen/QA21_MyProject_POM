@@ -85,6 +85,7 @@ public class HomePage extends PageBase {
 
     public HomePage clickOnLogoutLink() {
         System.out.println("Let's out from profile!");
+        pause(2000);
         click(logoutLink);
         return new HomePage(driver);
     }

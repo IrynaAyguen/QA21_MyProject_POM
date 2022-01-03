@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Collection;
 
 public class ProfilePage extends PageBase {
 
@@ -53,7 +52,7 @@ public class ProfilePage extends PageBase {
     }
 
 
-    @FindBy(css=".wicon")
+    @FindBy(css = ".wicon")
     WebElement messagePassUpdated;
 
     public String takeMessageText() {
