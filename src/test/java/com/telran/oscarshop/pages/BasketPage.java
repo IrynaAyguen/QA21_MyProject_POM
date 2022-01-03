@@ -138,4 +138,10 @@ public class BasketPage extends PageBase {
         return driver.findElement(By.xpath("//form[@class='basket_summary']/div[2] /div/div[5]"))
                 .getText().replace("£", "");
     }
+
+    public String getTotal() {
+        String totalOfBasket = driver.findElement(By.cssSelector(".align-right .price_color"))
+                .getText().replace("£", "");
+        return totalOfBasket;
+    }
 }
