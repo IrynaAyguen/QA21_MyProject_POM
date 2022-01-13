@@ -1,1 +1,1 @@
-# QA21_MyProject_POM
+# Selenium project is intendet to test web site OscarShop
