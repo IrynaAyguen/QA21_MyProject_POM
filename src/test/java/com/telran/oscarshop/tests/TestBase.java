@@ -4,7 +4,6 @@ import com.telran.oscarshop.helpers.MyListener;
 import com.telran.oscarshop.helpers.PropertiesLoader;
 import com.telran.oscarshop.pages.HomePage;
 import com.telran.oscarshop.pages.PageBase;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
