@@ -1,0 +1,63 @@
+20:17:18.552 [main] INFO  com.telran.oscarshop.tests.TestBase - Start test userCanEditProfileTest with data: []
+20:17:18.560 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: logout_link
+20:17:28.609 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: logout_link found
+20:17:28.609 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: login_link
+20:17:28.624 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: login_link found
+20:17:28.911 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+20:17:28.925 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+20:17:28.965 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+20:17:28.972 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+20:17:28.989 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+20:17:28.996 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+20:17:29.034 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+20:17:29.043 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+20:17:29.073 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+20:17:29.080 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+20:17:29.098 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+20:17:29.103 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+20:17:29.123 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: [name=login_submit]
+20:17:29.132 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: [name=login_submit] found
+20:17:34.494 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //ul[@class='nav navbar-nav navbar-right'] /li[1]
+20:17:34.510 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //ul[@class='nav navbar-nav navbar-right'] /li[1] found
+20:17:35.060 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //tbody /tr[1]/td
+20:17:35.071 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //tbody /tr[1]/td found
+20:17:37.095 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //a[@href='/en-gb/accounts/profile/edit/']
+20:17:37.110 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //a[@href='/en-gb/accounts/profile/edit/'] found
+20:17:37.470 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+20:17:37.485 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+20:17:37.526 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+20:17:37.533 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+20:17:37.557 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+20:17:37.565 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+20:17:37.603 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+20:17:37.614 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+20:17:37.642 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+20:17:37.648 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+20:17:37.665 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+20:17:37.669 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+20:17:37.696 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:37.705 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:37.735 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:37.744 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:37.763 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:37.769 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:37.805 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-lg.btn-primary
+20:17:37.814 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-lg.btn-primary found
+20:17:40.447 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //tbody /tr[1]/td
+20:17:40.456 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //tbody /tr[1]/td found
+20:17:40.473 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //tbody /tr[2]/td
+20:17:40.484 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //tbody /tr[2]/td found
+20:17:40.496 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .wicon
+20:17:40.508 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .wicon found
+20:17:42.532 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //a[@href='/en-gb/accounts/profile/edit/']
+20:17:42.532 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //a[@href='/en-gb/accounts/profile/edit/'] found
+20:17:42.920 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:42.929 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:42.968 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:42.977 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:42.995 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_email
+20:17:43.003 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_email found
+20:17:43.037 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-lg.btn-primary
+20:17:43.043 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-lg.btn-primary found
+20:17:46.008 [main] INFO  com.telran.oscarshop.tests.TestBase - PASSED: test method userCanEditProfileTest
+20:17:46.008 [main] INFO  com.telran.oscarshop.tests.TestBase - ==========================

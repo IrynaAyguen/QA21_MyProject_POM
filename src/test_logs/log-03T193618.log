@@ -1,0 +1,111 @@
+19:36:22.353 [main] INFO  com.telran.oscarshop.tests.TestBase - Start test userCanEditAddressPositiveTest with data: []
+19:36:22.360 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: logout_link
+19:36:32.386 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: logout_link found
+19:36:32.386 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: login_link
+19:36:32.402 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: login_link found
+19:36:32.743 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+19:36:32.758 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+19:36:32.790 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+19:36:32.798 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+19:36:32.817 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+19:36:32.824 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+19:36:32.860 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+19:36:32.870 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+19:36:32.901 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+19:36:32.909 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+19:36:32.928 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+19:36:32.934 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+19:36:32.953 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: [name=login_submit]
+19:36:32.964 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: [name=login_submit] found
+19:36:40.568 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .dropdown-submenu
+19:36:40.584 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .dropdown-submenu found
+19:36:41.585 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .col-xs-6:nth-child(1) form
+19:36:41.597 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .col-xs-6:nth-child(1) form found
+19:36:45.118 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //span[@class='btn-group']
+19:36:45.129 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //span[@class='btn-group'] found
+19:36:45.454 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-block
+19:36:45.467 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-block found
+19:36:46.047 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_title
+19:36:46.061 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_title found
+19:36:46.067 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_title
+19:36:46.072 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_title found
+19:36:46.081 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_title
+19:36:46.087 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_title found
+19:36:46.088 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: .//option[normalize-space(.) = "Mrs"]
+19:36:46.099 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: .//option[normalize-space(.) = "Mrs"] found
+19:36:46.126 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+19:36:46.140 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+19:36:46.182 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+19:36:46.187 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+19:36:46.205 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_first_name
+19:36:46.212 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_first_name found
+19:36:46.230 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+19:36:46.238 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+19:36:46.267 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+19:36:46.272 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+19:36:46.289 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_last_name
+19:36:46.294 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_last_name found
+19:36:46.314 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line1
+19:36:46.322 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line1 found
+19:36:46.353 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line1
+19:36:46.360 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line1 found
+19:36:46.377 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line1
+19:36:46.382 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line1 found
+19:36:46.410 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line4
+19:36:46.419 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line4 found
+19:36:46.448 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line4
+19:36:46.453 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line4 found
+19:36:46.470 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_line4
+19:36:46.476 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_line4 found
+19:36:46.496 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:46.505 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:46.534 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:46.542 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:46.560 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:46.565 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:46.584 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_country
+19:36:46.595 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_country found
+19:36:46.598 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_country
+19:36:46.603 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_country found
+19:36:46.610 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_country
+19:36:46.615 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_country found
+19:36:46.615 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: .//option[normalize-space(.) = "Germany"]
+19:36:46.623 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: .//option[normalize-space(.) = "Germany"] found
+19:36:46.646 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-primary
+19:36:46.653 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-primary found
+19:36:47.701 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: view_preview
+19:36:47.713 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: view_preview found
+19:36:48.025 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: place-order
+19:36:48.036 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: place-order found
+19:36:49.036 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .col-sm-offset-4 .btn-lg
+19:36:49.045 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .col-sm-offset-4 .btn-lg found
+19:36:51.631 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //ul[@class='nav navbar-nav navbar-right'] /li[1]
+19:36:51.647 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //ul[@class='nav navbar-nav navbar-right'] /li[1] found
+19:36:54.121 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //a[@href='/en-gb/accounts/addresses/']
+19:36:54.136 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //a[@href='/en-gb/accounts/addresses/'] found
+19:36:54.481 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: h1
+19:36:54.494 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: h1 found
+19:36:54.511 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: tbody tr:nth-child(2) td:nth-child(2) div.btn-group > a
+19:36:54.523 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: tbody tr:nth-child(2) td:nth-child(2) div.btn-group > a found
+19:36:54.883 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:54.891 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:54.935 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:54.941 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:54.959 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:54.963 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:54.991 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-lg.btn-primary
+19:36:54.999 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-lg.btn-primary found
+19:36:55.525 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .wicon
+19:36:55.537 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .wicon found
+19:36:55.554 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: tbody tr:nth-child(2) td:nth-child(2) div.btn-group > a
+19:36:55.561 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: tbody tr:nth-child(2) td:nth-child(2) div.btn-group > a found
+19:36:55.908 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:55.914 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:55.958 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:55.969 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:55.991 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_postcode
+19:36:55.998 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_postcode found
+19:36:56.029 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .btn-lg.btn-primary
+19:36:56.036 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .btn-lg.btn-primary found
+19:36:56.626 [main] INFO  com.telran.oscarshop.tests.TestBase - PASSED: test method userCanEditAddressPositiveTest
+19:36:56.626 [main] INFO  com.telran.oscarshop.tests.TestBase - ==========================
