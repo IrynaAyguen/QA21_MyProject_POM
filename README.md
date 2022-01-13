@@ -55,7 +55,9 @@ and **Smoke test** in the project. All tests have  Asserts.
 
 ### Tests running in Jenkins
 
-1. To run Jenkins just browse to the path where the **jenkins.war** is located **via terminal** and type ***java -jar jenkins.war***;
+1. To run Jenkins just browse to the path where the **jenkins.war** is located **via terminal** 
+
+and type ***java -jar jenkins.war***;
 
 2. Type in Google ***localhost:8080***, <Enter>;
 
