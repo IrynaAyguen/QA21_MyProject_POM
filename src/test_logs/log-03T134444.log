@@ -1,0 +1,31 @@
+13:44:48.326 [main] INFO  com.telran.oscarshop.tests.TestBase - Start test userCanOrderProductPositiveTest with data: []
+13:44:48.332 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: logout_link
+13:44:58.370 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: logout_link found
+13:44:58.370 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: login_link
+13:44:58.385 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: login_link found
+13:44:58.674 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:44:58.688 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:44:58.725 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:44:58.732 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:44:58.750 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:44:58.756 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:44:58.797 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:44:58.806 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:44:58.836 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:44:58.843 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:44:58.862 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:44:58.868 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:44:58.890 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: [name=login_submit]
+13:44:58.900 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: [name=login_submit] found
+13:45:01.588 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //a[@class='btn btn-default']
+13:45:11.628 [main] ERROR com.telran.oscarshop.tests.TestBase - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='btn btn-default']"}
+  (Session info: chrome=96.0.4664.110)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-ND6M733L', ip: '192.168.178.29', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\iryna\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59099}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e5273d4d7ee409e7fc0b9e49280cffdd
+*** Element info: {Using=xpath, value=//a[@class='btn btn-default']}
+13:45:11.628 [main] ERROR com.telran.oscarshop.tests.TestBase - FAILED: test method userCanOrderProductPositiveTest
+13:45:11.799 [main] INFO  com.telran.oscarshop.tests.TestBase - ==========================
