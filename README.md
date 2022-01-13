@@ -1,5 +1,7 @@
 # Selenium project is intendet to test website *OscarShop*
 
+---------------------------------------------------------------
+
 This is the web test automation project for website testing.
 
 OscarShop website is under development. The site can be seen   **[here](http://selenium1py.pythonanywhere.com)**.
@@ -60,20 +62,26 @@ and **Smoke test** in the project. All tests have  Asserts.
 3. Input **login** and **password** for Jenkins, <Sign in>;
 
 4. Create a new **Item** on Dashboard for **OscarShop_SmokeWebTestChrome** with configuration parameters:
-  - Source Code Management = Git; 
-  - Repository URL = https://github.com/IrynaAyguen/QA21_MyProject_POM ; 
-  - Branches to build = * / *;
-  - Build = Invoke Gradle; Gradle Version = gradle-7.2; Tasks= clean testSmoke.
+   - Source Code Management = Git; 
+   - Repository URL = https://github.com/IrynaAyguen/QA21_MyProject_POM ; 
+   - Branches to build = * / *;
+   - Build = Invoke Gradle; Gradle Version = gradle-7.2; Tasks= clean testSmoke.
+  
+  ![Screenshot of Items](screenshot/jenkinsItems.png)
   
 5. Click on  Build Now ; 
   
 6. View a result of build in Console Output.
   
+  ![Screenshot of ConsoleOutput for Smoke test](screenshot/ConsoleOutputSmoke.png)
+  
 7. Repeade 4. for new **Item** on Dashboard for **OscarShop_RegressionWebTestChrome**, but Tasks= clean testRegression. 
   
   Repeade 5. and 6. for  **OscarShop_RegressionWebTestChrome** Item.
   
-  ![Screenshot](screenshot/jenkinsItems.png)
+   ![Screenshot of ConsoleOutput for Regression test](screenshot/ConsoleOutputRegression.png)
   
 
+ -------------------------------------------------- 
+  
 Contributors Iryna Ayguen iryna.ayguen2021@gmail.com
