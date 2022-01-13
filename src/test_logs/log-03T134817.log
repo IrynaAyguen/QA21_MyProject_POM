@@ -1,0 +1,59 @@
+13:48:21.789 [main] INFO  com.telran.oscarshop.tests.TestBase - Start test userCanOrderProductPositiveTest with data: []
+13:48:21.795 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: logout_link
+13:48:31.795 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: logout_link found
+13:48:31.795 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: login_link
+13:48:31.810 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: login_link found
+13:48:32.091 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:48:32.108 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:48:32.146 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:48:32.154 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:48:32.177 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-username
+13:48:32.185 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-username found
+13:48:32.223 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:48:32.233 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:48:32.265 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:48:32.272 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:48:32.291 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_login-password
+13:48:32.299 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_login-password found
+13:48:32.319 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: [name=login_submit]
+13:48:32.329 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: [name=login_submit] found
+13:48:35.416 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //a[@class='btn btn-default']
+13:48:35.428 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //a[@class='btn btn-default'] found
+13:48:35.794 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .basket-items
+13:48:35.809 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .basket-items found
+13:48:35.810 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .basket-items
+13:48:35.819 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .basket-items found
+13:48:35.819 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_form-0-quantity
+13:48:35.830 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_form-0-quantity found
+13:48:35.868 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_form-0-quantity
+13:48:35.878 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_form-0-quantity found
+13:48:35.896 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.id: id_form-0-quantity
+13:48:35.902 [main] INFO  com.telran.oscarshop.tests.TestBase - By.id: id_form-0-quantity found
+13:48:35.924 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .input-group-btn .btn.btn-default
+13:48:35.937 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .input-group-btn .btn.btn-default found
+13:48:41.590 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .basket-items
+13:48:41.594 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .basket-items found
+13:48:41.594 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .h1 a
+13:48:41.609 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .h1 a found
+13:48:44.259 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .dropdown-submenu
+13:48:44.276 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .dropdown-submenu found
+13:48:45.299 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .col-xs-6:nth-child(1) h3 > a
+13:48:45.313 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .col-xs-6:nth-child(1) h3 > a found
+13:48:45.332 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .col-xs-6:nth-child(1) form
+13:48:45.345 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .col-xs-6:nth-child(1) form found
+13:48:48.219 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //div[@id='messages'] //div[1]//div
+13:48:48.232 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //div[@id='messages'] //div[1]//div found
+13:48:48.251 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .col-xs-6:nth-child(2) form
+13:48:48.262 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .col-xs-6:nth-child(2) form found
+13:48:49.642 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //span[@class='btn-group']
+13:48:49.659 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //span[@class='btn-group'] found
+13:48:50.020 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .basket-items
+13:48:50.030 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .basket-items found
+13:48:50.030 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //form[@class='basket_summary']/div[1] /div/div[5]
+13:48:50.040 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //form[@class='basket_summary']/div[1] /div/div[5] found
+13:48:50.056 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.xpath: //form[@class='basket_summary']/div[2] /div/div[5]
+13:48:50.068 [main] INFO  com.telran.oscarshop.tests.TestBase - By.xpath: //form[@class='basket_summary']/div[2] /div/div[5] found
+13:48:50.084 [main] INFO  com.telran.oscarshop.tests.TestBase - Start search By.cssSelector: .align-right .price_color
+13:48:50.098 [main] INFO  com.telran.oscarshop.tests.TestBase - By.cssSelector: .align-right .price_color found
+13:48:50.118 [main] ERROR com.telran.oscarshop.tests.TestBase - FAILED: test method userCanOrderProductPositiveTest
+13:48:50.311 [main] INFO  com.telran.oscarshop.tests.TestBase - ==========================
