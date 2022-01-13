@@ -35,7 +35,7 @@ public class TestBase {
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        
+
         driver.get(baseURL);                  //  from PropertiesLoader
         new HomePage(driver).selectLanguage("British English");
         new HomePage(driver).clickGoButton();
