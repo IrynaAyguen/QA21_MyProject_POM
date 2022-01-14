@@ -59,9 +59,9 @@ and **Smoke test** in the project. All tests have  Asserts.
 
    and type ***java -jar jenkins.war***;
 
-2. Type in Google ***localhost:8080***, <Enter>;
+2. Type in Google ***localhost:8080***, click on Enter;
 
-3. Input **login** and **password** for Jenkins, <Sign in>;
+3. Input **login** and **password** for Jenkins, click on Sign in;
 
 4. Create a new **Item** on Dashboard for **OscarShop_SmokeWebTestChrome** with configuration parameters:
    - Source Code Management = Git; 
