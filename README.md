@@ -67,7 +67,9 @@ and **Smoke test** in the project. All tests have  Asserts.
    - Source Code Management = Git; 
    - Repository URL = https://github.com/IrynaAyguen/QA21_MyProject_POM ; 
    - Branches to build = * / *;
-   - Build = Invoke Gradle; Gradle Version = gradle-7.2; Tasks= clean testSmoke.
+   - Build = Invoke Gradle, 
+     - Gradle Version = gradle-7.2,
+     -  Tasks= clean testSmoke;
   
   ![Screenshot of Items](screenshot/jenkinsItems.png)
   
