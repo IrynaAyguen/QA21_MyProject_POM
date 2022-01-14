@@ -6,7 +6,7 @@ This is the web test automation project for website testing.
 
 OscarShop website is under development. The site can be seen   **[here](http://selenium1py.pythonanywhere.com)**.
 
-This project is written in **Java**  with  **Selenium** driver  and  uses  **Gradle** test builder  and  **TestNG** framework for testrunning.
+This project is written in **Java**  with  **Selenium** automated testing framework  and  uses  **Gradle** test builder  and  **TestNG** framework for testrunning.
 
 To execute the tests just browse to the path where the QA21_MyProject_POM is located **via terminal** and type ***gradlew clean testSmoke*** (for Smoke suite) or ***gradlew clean testRegression*** (for Regression suite) or execute the tests in **Intellij IDEA** (or your IDE). 
 
